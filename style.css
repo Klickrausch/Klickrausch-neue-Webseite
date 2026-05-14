@@ -677,6 +677,30 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   background: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' stroke='%23735240' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
+/* Price display in cards */
+.l-card__price {
+  display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
+  margin-top: auto; padding-top: 18px; margin-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.l-card__price strong {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 700;
+  color: var(--brown); line-height: 1;
+}
+.l-card__price > span {
+  font-size: .82rem; color: var(--text-3); font-weight: 500;
+}
+.l-card__price-note {
+  width: 100%; margin-top: 6px;
+  font-size: .75rem; color: var(--brown-lt); font-weight: 600;
+  display: flex; align-items: center; gap: 5px;
+}
+.l-card__price-note::before {
+  content: '';
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--brown-lt); flex-shrink: 0;
+}
+
 /* Photo card inside grid */
 .l-card--photo {
   padding: 0; overflow: hidden; position: relative;

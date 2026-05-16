@@ -4,13 +4,11 @@
 
 | | Keyword | Suchintention |
 |---|---|---|
-| **Fokus** | Google Ads Freelancerin | transactional |
-| **Neben** | Google Ads Expertin | transactional |
-| **Neben** | Google Ads Betreuung selbständige Frauen | transactional |
-| **Neben** | Google Suchkampagnen Coaches | transactional |
-
-**Lokal-Variante (sobald Ort bekannt):**
-→ „Google Ads Freelancerin [Stadt]" / „Google Ads [Region]"
+| **Fokus** | Google Ads Freelancerin Düsseldorf | transactional |
+| **Neben** | Google Ads Expertin Düsseldorf | transactional |
+| **Neben** | Google Ads Betreuung Düsseldorf | transactional |
+| **Neben** | Google Suchkampagnen NRW | transactional |
+| **Neben** | Google Ads für Coaches Düsseldorf | transactional |
 
 ---
 

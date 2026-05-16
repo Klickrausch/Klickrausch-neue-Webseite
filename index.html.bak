@@ -3,42 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Ads Freelancerin – Mehr Anfragen, weniger Streuverlust | Klickrausch</title>
-  <meta name="description" content="Als zertifizierte Google Ads Expertin helfe ich Coaches, Fotografinnen und Unternehmerinnen, ihre Wunschkundinnen bei Google zu erreichen. Persönlich, messbar, ohne Budgetverschwendung. Kostenloses Erstgespräch." />
-  <link rel="canonical" href="https://klickrausch.github.io/Klickrausch-neue-Webseite/" />
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Google Ads Freelancerin – Mehr Anfragen, weniger Streuverlust | Klickrausch" />
-  <meta property="og:description" content="Zertifizierte Google Ads Expertin für Coaches, Fotografinnen und selbständige Unternehmerinnen. Persönliche Betreuung, transparente Ergebnisse, kostenloses Erstgespräch." />
-  <meta property="og:url" content="https://klickrausch.github.io/Klickrausch-neue-Webseite/" />
-  <meta property="og:image" content="https://klickrausch.github.io/Klickrausch-neue-Webseite/img/foto-hero.jpg" />
-  <meta property="og:locale" content="de_DE" />
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Klickrausch – Nadine Dross-Buetow",
-    "description": "Zertifizierte Google Ads Expertin für selbständige Frauen, Coaches und Fotografinnen.",
-    "url": "https://klickrausch.github.io/Klickrausch-neue-Webseite/",
-    "telephone": "+4915679678373",
-    "email": "impuls@drossbuetow-marketing.de",
-    "founder": {
-      "@type": "Person",
-      "name": "Nadine Dross-Buetow",
-      "jobTitle": "Google Ads Expertin",
-      "image": "https://klickrausch.github.io/Klickrausch-neue-Webseite/img/foto-nadine.jpg"
-    },
-    "areaServed": "DE",
-    "serviceType": ["Google Ads Management", "Google Suchkampagnen", "Kampagnen-Optimierung", "Google Business Profil"],
-    "priceRange": "ab 480 €",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "5"
-    }
-  }
-  </script>
+  <title>Klickrausch | Google Ads Expertin Nadine Dross-Buetow</title>
+  <meta name="description" content="Als zertifizierte Google Ads Expertin helfe ich dir, die richtigen Kunden zu erreichen, ohne Streuverluste, ohne Zeitverschwendung." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -82,12 +48,12 @@
 
       <!-- Text -->
       <div class="hero__text" data-reveal>
-        <p class="hero__kicker">Google Ads Freelancerin · zertifiziert & persönlich</p>
+        <p class="hero__kicker">Zertifizierte Google Ads Expertin</p>
         <h1 class="hero__h1">
           Mehr Anfragen von Kundinnen,<br /><em>die wirklich zu dir passen.</em>
         </h1>
         <p class="hero__sub">
-          Deine Wunschkundinnen suchen bei Google genau nach dem, was du anbietest. Mit Google Ads sorge ich dafür, dass sie dich finden und nicht deine Mitbewerberin. Persönlich, messbar, ohne Budgetverschwendung.
+          Deine Wunschkundinnen suchen bei Google genau nach dem, was du anbietest. Ich sorge dafür, dass sie dich finden und nicht deine Mitbewerberin. Persönlich, messbar, ohne Budgetverschwendung.
         </p>
         <div class="hero__actions">
           <a href="#kontakt" class="btn btn--primary">Kostenloses Erstgespräch buchen</a>
@@ -167,7 +133,7 @@
           <a href="#kontakt" class="btn btn--primary" style="margin-top:12px;">Kostenloses Erstgespräch buchen</a>
         </div>
         <div class="intro__visual" data-reveal data-delay="120">
-          <img src="img/foto-intro.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin, analysiert Kampagnendaten auf dem Handy" />
+          <img src="img/foto-intro.jpg" alt="Nadine arbeitet mit ihrem Handy" />
           <div class="intro__pain-cards">
             <div class="pain-item">
               <span class="pain-item__icon">
@@ -290,10 +256,6 @@
             <li>Tägliches Monitoring & Optimierung</li>
             <li>Monatliches Reporting & Call</li>
           </ul>
-          <div class="l-card__price">
-            <strong>ab 480 €</strong><span>/ Monat</span>
-            <div class="l-card__price-note">Erstgespräch kostenlos</div>
-          </div>
         </div>
 
         <div class="l-card" data-reveal data-delay="120">
@@ -343,9 +305,6 @@
             <li>Ohne Fachchinesisch erklärt</li>
             <li>Kein Verkaufsgespräch</li>
           </ul>
-          <div class="l-card__price">
-            <strong>120 €</strong><span>/ Stunde</span>
-          </div>
         </div>
 
         <div class="l-card" data-reveal data-delay="80">
@@ -492,7 +451,7 @@
           <p>Hier findest du Antworten auf die Fragen, die mir Kunden am häufigsten stellen. Du findest deine Frage nicht? Dann schreib mir einfach!</p>
           <a href="#kontakt" class="btn btn--primary" style="margin-top:1.5rem;">Direkt fragen →</a>
           <div class="faq__photo">
-            <img src="img/foto-faq.jpg" alt="Nadine Dross-Buetow, Google Ads Freelancerin, beantwortet Fragen persönlich" />
+            <img src="img/foto-faq.jpg" alt="Nadine Dross-Buetow" />
           </div>
         </div>
         <div class="faq__list" data-reveal data-delay="120">
@@ -582,7 +541,7 @@
           <h2>Lass uns<br /><em>ins Gespräch kommen.</em></h2>
           <p>Schreib mir direkt oder nutze das Formular, ich melde mich innerhalb von 24 Stunden persönlich bei dir.</p>
           <div class="kontakt__photo">
-            <img src="img/foto-kontakt.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin und Freelancerin, freut sich auf deine Nachricht" />
+            <img src="img/foto-kontakt.jpg" alt="Nadine Dross-Buetow lächelt" />
           </div>
           <div class="kontakt__chs">
             <a href="mailto:impuls@drossbuetow-marketing.de" class="kch">

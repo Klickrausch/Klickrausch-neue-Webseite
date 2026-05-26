@@ -64,7 +64,7 @@
       <a href="#hero" class="nav__logo">Klickrausch</a>
       <nav class="nav__links" aria-label="Hauptnavigation">
         <a href="#nadine">Über mich</a>
-        <a href="#leistungen">Angebot</a>
+        <a href="#angebot">Angebot & Preise</a>
         <a href="#faq">FAQ</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -75,7 +75,7 @@
     </div>
     <div class="nav__mobile" id="mobileNav">
       <a href="#nadine"     class="mlink">Über mich</a>
-      <a href="#leistungen" class="mlink">Angebot</a>
+      <a href="#angebot" class="mlink">Angebot & Preise</a>
       <a href="#faq"        class="mlink">FAQ</a>
       <a href="#kontakt"    class="mlink">Kontakt</a>
       <a href="#kontakt"    class="mlink mlink--cta">Kostenloses Erstgespräch buchen</a>
@@ -272,108 +272,160 @@
     </div>
   </section>
 
-  <!-- ═══════════ 4 · LEISTUNGEN ═══════════ -->
-  <section class="leistungen section" id="leistungen">
+  <!-- ═══════════ 4 · ANGEBOT ═══════════ -->
+  <section class="angebot section" id="angebot">
     <div class="container">
+
       <div class="section-head" data-reveal>
         <div class="tag">Mein Angebot</div>
-        <h2>Leistungen im Überblick.</h2>
+        <h2>Was ich für dich tue <em>— und was es kostet.</em></h2>
       </div>
 
+      <!-- Leistungs-Übersicht: 3 Karten -->
+      <div class="lo-grid">
 
-      <div class="l-grid">
-
-        <div class="l-card" data-reveal data-delay="0">
-          <div class="l-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+        <div class="lo-card" data-reveal data-delay="0">
+          <div class="lo-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
           </div>
-          <h3>Google Suchkampagnen</h3>
-          <p>Zielgerichtete Suchkampagnen, die genau dann erscheinen, wenn deine Wunschkundinnen aktiv nach dir suchen. Kein Streuverlust, nur qualifizierte Klicks.</p>
-          <ul>
-            <li>Strategische Kampagnenerstellung</li>
-            <li>Keyword-Recherche & Anzeigentexte</li>
-            <li>Tägliches Monitoring & Optimierung</li>
-            <li>Monatliches Reporting & Call</li>
-          </ul>
-          <div class="l-card__price">
-            <strong>ab 480 €</strong><span>/ Monat</span>
-            <div class="l-card__price-note">Erstgespräch kostenlos</div>
-          </div>
+          <h3>Google Ads</h3>
+          <p>Ich richte deine Kampagnen strategisch ein und betreue sie laufend. So erreichst du genau die Kund:innen, die bereits nach deinem Angebot suchen.</p>
         </div>
 
-        <div class="l-card" data-reveal data-delay="120">
-          <div class="l-card__tag l-card__tag--light">Beliebt</div>
-          <div class="l-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M7 8h10M7 12h6"/></svg>
+        <div class="lo-card" data-reveal data-delay="100">
+          <div class="lo-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <h3>Optimierte Landing Pages</h3>
-          <p>Maßgeschneiderte Seiten, die Besucher in Kunden verwandeln, ohne Ablenkung, mit klarem Fokus und direkter Buchungsmöglichkeit.</p>
-          <ul>
-            <li>Conversion-optimiertes Design</li>
-            <li>A/B-Testing & Heatmap-Analyse</li>
-            <li>Mobile-First Umsetzung</li>
-            <li>Kalender-Integration</li>
-          </ul>
+          <h3>Google Unternehmensprofil</h3>
+          <p>Ich optimiere dein Profil vollständig und sorge dafür, dass du in der lokalen Google-Suche besser sichtbar wirst. Mehr Präsenz, ohne Werbebudget.</p>
         </div>
 
-        <div class="l-card l-card--photo" data-reveal data-delay="240">
-          <img src="img/foto-work-1.jpg" alt="Google Ads Performance-Analyse" class="l-card__photo-img" />
-          <div class="l-card__photo-label">Google Ads · Performance-Analyse</div>
-        </div>
-
-        <div class="l-card" data-reveal data-delay="120">
-          <div class="l-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <div class="lo-card" data-reveal data-delay="200">
+          <div class="lo-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
-          <h3>Kampagnen-Check-Up</h3>
-          <p>Du hast bereits Google Ads laufen, bist aber nicht zufrieden mit den Ergebnissen? Ich analysiere dein Konto und decke ungenutzte Potenziale auf.</p>
-          <ul>
-            <li>Tiefgehende Kontoanalyse</li>
-            <li>Identifikation von Budgetverschwendung</li>
-            <li>Konkrete Handlungsempfehlungen</li>
-            <li>Einmaliges Beratungsgespräch</li>
-          </ul>
-        </div>
-
-
-        <div class="l-card" data-reveal data-delay="0">
-          <div class="l-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <h3>Google Strategiegespräch</h3>
-          <p>Du weißt nicht, wo du anfangen sollst? Im 1:1-Gespräch analysieren wir gemeinsam deine Situation und ich zeige dir, welcher Weg für dich und dein Business der richtige ist, ohne Fachchinesisch, ohne Verkaufsdruck.</p>
-          <ul>
-            <li>Persönliche Ist-Analyse</li>
-            <li>Klare Empfehlung für dein Business</li>
-            <li>Ohne Fachchinesisch erklärt</li>
-            <li>Kein Verkaufsgespräch</li>
-          </ul>
-          <div class="l-card__price">
-            <strong>120 €</strong><span>/ Stunde</span>
-          </div>
-        </div>
-
-        <div class="l-card" data-reveal data-delay="80">
-          <div class="l-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-          </div>
-          <h3>Organische Sichtbarkeit</h3>
-          <p>Du wirst bei Google kaum gefunden, obwohl du tolles leistest? Ich helfe dir, ohne bezahlte Anzeigen organisch sichtbarer zu werden, lokal, gezielt und nachhaltig.</p>
-          <ul>
-            <li>Google Business Profil optimieren</li>
-            <li>Lokale Sichtbarkeit erhöhen</li>
-            <li>Keyword-Strategie für deine Nische</li>
-            <li>Mehr organische Anfragen</li>
-          </ul>
+          <h3>Webseite &amp; Funnel</h3>
+          <p>Ich erstelle Webseiten und Salespages, die Besucher:innen in Kund:innen verwandeln. Conversion-optimiert, klar und auf deine Zielgruppe ausgerichtet.</p>
         </div>
 
       </div>
 
-      <div style="text-align:center; margin-top:44px;" data-reveal>
-        <a href="#kontakt" class="btn btn--primary">Erstgespräch buchen &rarr;</a>
+      <!-- Überleitung -->
+      <div class="angebot-bridge" data-reveal>
+        <p>Alles was du brauchst <em>— als fertiges Paket.</em></p>
       </div>
 
     </div>
+
+    <!-- Pakete & Preise -->
+    <div class="pakete-wrap">
+      <div class="container">
+
+        <div class="pakete-grid">
+
+          <!-- Paket 1: Strategie & Sichtbarkeit -->
+          <div class="paket-card" data-reveal data-delay="0">
+            <div>
+              <p class="paket-name">Strategie &amp; Sichtbarkeit</p>
+              <p class="paket-tagline">Der strategische Einstieg — bevor du Geld in Ads investierst</p>
+            </div>
+            <p class="paket-fuer">Für alle, die wissen wollen, ob und wie Google wirklich für ihr Business funktioniert</p>
+            <div class="paket-preis">
+              <p class="preis-haupt">690 €<span class="preis-einheit">einmalig</span></p>
+            </div>
+            <ul class="paket-leistungen">
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Unternehmensprofil SEO-optimiert</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Analyse deines bestehenden Funnels / Angebots</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Individuelle Marketingstrategie für dein Angebot</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Konkrete Handlungsempfehlungen schriftlich</li>
+              <li class="nein"><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#f5ede8"/><path d="M6 9h6" stroke="#c4a882" stroke-width="1.5" stroke-linecap="round"/></svg>Keine laufende Ads-Betreuung</li>
+            </ul>
+            <a href="#kontakt" class="paket-cta paket-cta--secondary">Erstgespräch buchen &rarr;</a>
+          </div>
+
+          <!-- Paket 2: Google Ads & Betreuung (featured) -->
+          <div class="paket-card paket-card--featured" data-reveal data-delay="100">
+            <span class="paket-badge badge-beliebt">Beliebtestes Paket</span>
+            <div>
+              <p class="paket-name">Google Ads &amp; Betreuung</p>
+              <p class="paket-tagline">Wunschkund:innen aktiv über Google gewinnen</p>
+            </div>
+            <p class="paket-fuer">Für alle, die bereit sind, in bezahlte Sichtbarkeit zu investieren</p>
+            <div class="paket-preis">
+              <p class="preis-haupt">960 €<span class="preis-einheit">Einrichtung einmalig</span></p>
+              <p class="preis-monat">ab 550 € <span style="font-size:.8rem; font-weight:400; color:var(--text-3);">/ Monat Betreuung</span></p>
+              <p class="preis-hinweis">Mindestlaufzeit 3 Monate · Betreuungsgebühr abhängig vom Werbebudget</p>
+              <span class="preis-gratis">+ Google Unternehmensprofil gratis (Wert: 690 €)</span>
+            </div>
+            <ul class="paket-leistungen">
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Ads Einrichtung + Conversion-Tracking</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Laufende Optimierung &amp; wöchentliches Monitoring</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Monatliches Reporting + persönlicher Strategiecall</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Unternehmensprofil SEO-optimiert inklusive</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Direkte Erreichbarkeit per WhatsApp &amp; E-Mail</li>
+            </ul>
+            <a href="#kontakt" class="paket-cta paket-cta--primary">Jetzt Erstgespräch buchen &rarr;</a>
+          </div>
+
+          <!-- Paket 3: Komplett-Paket -->
+          <div class="paket-card" data-reveal data-delay="200">
+            <span class="paket-badge badge-komplett">Alles aus einer Hand</span>
+            <div>
+              <p class="paket-name">Komplett-Paket</p>
+              <p class="paket-tagline">Professioneller Auftritt + aktive Kund:innengewinnung</p>
+            </div>
+            <p class="paket-fuer">Für alle, die von Grund auf neu starten oder alles bündeln wollen</p>
+            <div class="paket-preis">
+              <p class="preis-haupt">2.950 €<span class="preis-einheit">Einrichtung einmalig</span></p>
+              <p class="preis-monat">ab 550 € <span style="font-size:.8rem; font-weight:400; color:var(--text-3);">/ Monat Betreuung</span></p>
+              <p class="preis-hinweis">Webseite (1.990 €) + Ads-Setup (960 €) · Mindestlaufzeit 3 Monate</p>
+              <span class="preis-gratis">+ Google Unternehmensprofil gratis (Wert: 690 €)</span>
+            </div>
+            <ul class="paket-leistungen">
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Professionelle Webseite (conversion-optimiert)</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Ads Einrichtung + Tracking</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Unternehmensprofil SEO-optimiert inklusive</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Laufende Betreuung &amp; wöchentliche Optimierung</li>
+              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Eine Ansprechpartnerin für alles</li>
+            </ul>
+            <a href="#kontakt" class="paket-cta paket-cta--secondary">Erstgespräch buchen &rarr;</a>
+          </div>
+
+        </div>
+
+        <!-- Add-ons -->
+        <div class="addons-wrap" data-reveal>
+          <p class="addons-title">Einzelleistungen &amp; Add-ons</p>
+          <p class="addons-sub">Diese Leistungen buchst du separat — je nach Bedarf.</p>
+          <div class="addons-grid">
+            <div class="addon-card">
+              <p class="addon-name">Funnel / Salespage</p>
+              <p class="addon-desc">Wenn keine Webseite vorhanden oder ein separater Verkaufsfunnel nötig ist</p>
+              <p class="addon-preis">690 € netto</p>
+            </div>
+            <div class="addon-card">
+              <p class="addon-name">Google Strategiegespräch</p>
+              <p class="addon-desc">Für alle, die zuerst Klarheit brauchen, bevor sie eine Entscheidung treffen</p>
+              <p class="addon-preis">120 € / Stunde</p>
+            </div>
+            <div class="addon-card">
+              <p class="addon-name">Kampagnen-Check-Up</p>
+              <p class="addon-desc">Du hast bereits Ads laufen, bist aber unzufrieden? Ich decke Potenziale auf.</p>
+              <p class="addon-preis">auf Anfrage</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abschluss CTA -->
+        <div class="pakete-cta-wrap" data-reveal>
+          <h3>Nicht sicher, welches Paket<br><em>zu dir passt?</em></h3>
+          <p>Im kostenlosen 30-Minuten-Gespräch finden wir gemeinsam heraus, was für dein Business am meisten Sinn ergibt. Kein Verkaufsgespräch. Kein Druck.</p>
+          <a href="#kontakt" class="paket-cta paket-cta--primary">Kostenloses Erstgespräch buchen &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <!-- ═══════════ 5 · ÜBER NADINE ═══════════ -->

@@ -63,8 +63,13 @@
     @media (max-width: 480px) {
       .intro__pain-full { grid-template-columns: 1fr; }
     }
-    /* Kontaktbild kleiner: 4:3 statt 3:4 */
-    .kontakt__photo img { aspect-ratio: 4/3; }
+    /* Kontaktbild: ganze Person sichtbar, kompaktes Quadrat */
+    .kontakt__photo img {
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      object-position: center center;
+      background: var(--bg-2);
+    }
   </style>
 </head>
 <body>
@@ -228,7 +233,7 @@
           <h3>Das passt perfekt, wenn du…</h3>
           <ul>
             <li>als Coach, Fotografin oder selbständige Unternehmerin arbeitest</li>
-            <li>weißt, dass deine Wunschkundinnen bei Google suchen, dich dort aber noch nicht finden</li>
+            <li>weißt, dass deine Wunschkund:innen bei Google suchen, dich dort aber noch nicht finden</li>
             <li>Anfragen bekommst, die aber nicht wirklich zu dir und deinem Angebot passen</li>
             <li>endlich verstehen willst, was dein Marketing-Budget wirklich bringt</li>
             <li>jemanden suchst, der dich persönlich kennt, statt einem anonymen Ticket-System</li>

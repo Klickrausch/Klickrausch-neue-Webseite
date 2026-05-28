@@ -41,7 +41,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
-      "reviewCount": "5"
+      "reviewCount": "7"
     }
   }
   </script>
@@ -49,6 +49,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Pain-Kästchen: volle Breite, 4 Spalten */
+    .intro__pain-full {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    @media (max-width: 900px) {
+      .intro__pain-full { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .intro__pain-full { grid-template-columns: 1fr; }
+    }
+    /* Kontaktbild kleiner: 4:3 statt 3:4 */
+    .kontakt__photo img { aspect-ratio: 4/3; }
+  </style>
 </head>
 <body>
 
@@ -90,7 +107,7 @@
       <div class="hero__text" data-reveal>
         <p class="hero__kicker">Google Ads Freelancerin · zertifiziert & persönlich</p>
         <h1 class="hero__h1">
-          Mehr Anfragen durch Google Ads –<br /><em>von Kund:innen, die wirklich zu dir passen.</em>
+          Mehr Anfragen durch Google Ads,<br /><em>von Kund:innen, die wirklich zu dir passen.</em>
         </h1>
         <p class="hero__sub">
           Deine Wunschkund:innen suchen bei Google genau nach dem, was du anbietest. Mit Google Ads sorge ich dafür, dass sie dich finden und nicht deine Mitbewerberin. Persönlich, messbar, ohne Budgetverschwendung.
@@ -110,7 +127,7 @@
           </div>
           <div class="hbadge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            5 × 5-Sterne Google Bewertungen
+            7 × 5-Sterne Google Bewertungen
           </div>
         </div>
       </div>
@@ -121,14 +138,6 @@
           <img src="img/foto-hero.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin" />
           <div class="hero__photo-deco hero__photo-deco--1"></div>
           <div class="hero__photo-deco hero__photo-deco--2"></div>
-        </div>
-        <div class="hero__stat-card hero__stat-card--a">
-          <strong>+312 %</strong>
-          <span>Mehr Anfragen</span>
-        </div>
-        <div class="hero__stat-card hero__stat-card--b">
-          <strong>ROI 4,8×</strong>
-          <span>Werberendite</span>
         </div>
       </div>
 
@@ -144,7 +153,7 @@
       </div>
       <div class="tbar-sep"></div>
       <div class="tbar-item">
-        <strong>5 × 5★</strong>
+        <strong>7 × 5★</strong>
         <span>Google Bewertungen</span>
       </div>
       <div class="tbar-sep"></div>
@@ -174,32 +183,32 @@
         </div>
         <div class="intro__visual" data-reveal data-delay="120">
           <img src="img/foto-intro.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin, analysiert Kampagnendaten auf dem Handy" />
-          <div class="intro__pain-cards">
-            <div class="pain-item">
-              <span class="pain-item__icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 4v.01M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2-3 2.5-3 4.5"/></svg>
-              </span>
-              <p>„Mein Budget läuft jeden Monat, aber ich weiß nie, ob es wirklich etwas bringt."</p>
-            </div>
-            <div class="pain-item">
-              <span class="pain-item__icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="23" y2="12"/><line x1="23" y1="8" x2="19" y2="12"/></svg>
-              </span>
-              <p>„Ich bekomme Anfragen, aber die passen einfach nicht zu mir."</p>
-            </div>
-            <div class="pain-item">
-              <span class="pain-item__icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </span>
-              <p>„Ich verbringe Stunden mit Terminabstimmung statt mit meinen Kund:innen."</p>
-            </div>
-            <div class="pain-item">
-              <span class="pain-item__icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-              </span>
-              <p>„Meine Mitbewerberinnen sind bei Google überall, ich finde mich selbst kaum."</p>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="intro__pain-full" data-reveal data-delay="80">
+        <div class="pain-item">
+          <span class="pain-item__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 4v.01M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2-3 2.5-3 4.5"/></svg>
+          </span>
+          <p>„Mein Budget läuft jeden Monat, aber ich weiß nie, ob es wirklich etwas bringt."</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-item__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="23" y2="12"/><line x1="23" y1="8" x2="19" y2="12"/></svg>
+          </span>
+          <p>„Ich bekomme Anfragen, aber die passen einfach nicht zu mir."</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-item__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <p>„Ich verbringe Stunden mit Terminabstimmung statt mit meinen Kund:innen."</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-item__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </span>
+          <p>„Meine Mitbewerberinnen sind bei Google überall, ich finde mich selbst kaum."</p>
         </div>
       </div>
     </div>
@@ -278,7 +287,7 @@
 
       <div class="section-head" data-reveal>
         <div class="tag">Mein Angebot</div>
-        <h2>Was ich für dich tue <em>— und was es kostet.</em></h2>
+        <h2>Was ich für dich tue <em>und was es kostet.</em></h2>
       </div>
 
       <!-- Leistungs-Übersicht: 3 Karten -->
@@ -312,7 +321,7 @@
 
       <!-- Überleitung -->
       <div class="angebot-bridge" data-reveal>
-        <p>Alles was du brauchst <em>— als fertiges Paket.</em></p>
+        <p>Alles was du brauchst, <em>als fertiges Paket.</em></p>
       </div>
 
     </div>
@@ -327,7 +336,7 @@
           <div class="paket-card" data-reveal data-delay="0">
             <div>
               <p class="paket-name">Strategie &amp; Sichtbarkeit</p>
-              <p class="paket-tagline">Der strategische Einstieg — bevor du Geld in Ads investierst</p>
+              <p class="paket-tagline">Der strategische Einstieg, bevor du Geld in Ads investierst</p>
             </div>
             <p class="paket-fuer">Für alle, die wissen wollen, ob und wie Google wirklich für ihr Business funktioniert</p>
             <div class="paket-preis">

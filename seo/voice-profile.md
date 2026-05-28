@@ -1,29 +1,86 @@
 # Voice-Profil – Nadine Dross-Buetow / Klickrausch
 
-## 5 typische Formulierungen / Satzmuster
+> Erstellt aus den Originaltexten der Website. Gilt als Referenz für alle SEO-Anpassungen.
 
-1. **Dreierrhythmus mit Knallpunkt:** „Persönlich, messbar, ohne Budgetverschwendung." / „Kein Verkaufsgespräch. Kein Druck. Nur ehrliche Einschätzung."
-2. **Einladender Abschluss:** „Genau hier komme ich ins Spiel." — kurz, selbstsicher, ohne Pathos
-3. **Du-Ansprache mit Empathie:** „Wenn es passt, treffe ich mich auch gerne persönlich, am See, auf einen Kaffee oder wo du dich am wohlsten fühlst."
-4. **Fürsorgliches Abnehmen:** „Ich nehme dir das Komplizierte ab, damit du dich auf das konzentrieren kannst, was du wirklich gut kannst."
-5. **Stilles Versprechen:** „Du hast immer eine direkte Ansprechpartnerin, die dein Business versteht, mitdenkt und sich wirklich kümmert."
+---
+
+## 5 typische Formulierungen & Satzmuster
+
+1. **Das kurze Wende-Statement:**
+   _„Genau hier komme ich ins Spiel."_
+   → Ein-Satz-Punch, der eine Aufzählung von Problemen abschließt und in die Lösung dreht.
+
+2. **Der Dreier-Verneinungs-Rhythmus:**
+   _„Kein Verkaufsgespräch. Kein Druck. Nur ehrliche Einschätzung."_
+   → Drei kurze Sätze, zwei Verneinungen, eine positive Aussage. Schafft sofort Vertrauen.
+
+3. **Die Komma-Aufzählung als Mini-Slogan:**
+   _„Persönlich, messbar, ohne Budgetverschwendung."_
+   → Drei Wörter / Phrasen ohne Verb. Kompakt, merkbar, sloganartig.
+
+4. **Der „Ob du…"-Einstieg mit sofortiger Empathie:**
+   _„Ob du Fotografin, Coach oder selbständige Unternehmerin bist: du gibst jeden Tag dein Bestes."_
+   → Spricht die Zielgruppe direkt an, bevor sie sich selbst nennt.
+
+5. **Das „damit du…"-Nutzen-Statement:**
+   _„Ich nehme dir das Komplizierte ab, damit du dich auf das konzentrieren kannst, was du wirklich gut kannst."_
+   → Eigene Leistung + konkreter Nutzen für die Kundin in einem Satz.
+
+---
 
 ## Satzbau
-- Gemischt: oft kurze, prägnante Sätze (2–8 Wörter) wechseln mit fließenden Beschreibungen
-- Viele Satzanfänge mit „Ich" oder „Du" — direkt und persönlich
-- Keine langen Schachtelsätze
-- Manchmal bewusste Wiederholung für Rhythmus: „Kein … Kein … Nur …"
+
+- **Gemischt:** Kurze Sätze (5–9 Wörter) wechseln mit mittellangen Sätzen (15–25 Wörter).
+- **Keine langen Schachtelsätze** mit mehreren Nebensätzen.
+- **Satzfragmente als Stilmittel** bewusst eingesetzt: _„Persönlich, messbar, ohne Budgetverschwendung."_
+- **Durchgehend Du-Ansprache** (kleingeschrieben): du, dich, dein, deine.
+- **Kein Passiv** – alles aktiv, direkt, klar.
+- **Kursivierungen** für emotionale Betonung: _„die wirklich zu dir passen"_
+
+---
+
+## Wörter, die NICHT verwendet werden
+
+| Vermeiden            | Warum                                          |
+|----------------------|------------------------------------------------|
+| revolutionär         | klingt übertrieben und unecht                  |
+| explodieren, boomen  | zu laut, zu hype-lastig                        |
+| krass, mega          | zu informell / marketing-schreiend             |
+| hebeln (Marketing)   | Agentur-Sprech                                 |
+| einzigartig          | abgenutzter Superlativ                         |
+| Jetzt kaufen!        | Verkaufsdruck – ihr größter Gegner             |
+| wir (für sich selbst)| sie spricht als „ich", nicht als anonymes „wir"|
+
+---
 
 ## Wörter, die sie gerne nutzt
-- persönlich, wirklich, gemeinsam, ehrlich, direkt
-- Wunschkundinnen (ihr eigenes Wort)
-- messbar, transparent, sauber
-- „genau dann", „genau hier" (Präzision ohne Kälte)
-- „es passt", „ich kümmere mich"
 
-## Wörter, die sie vermeidet
-- revolutionär, explosiv, krass, killer
-- „maximieren", „optimales Potenzial ausschöpfen"
-- Agenturdeutsch: „Deliverables", „KPI-getrieben", „datenbasiert skalieren"
-- Übertreibungen: „einzigartig", „unschlagbar", „beste"
-- Druck-Begriffe: „Jetzt sofort!", „Nur noch heute!"
+| Wort / Phrase          | Kontext                                          |
+|------------------------|--------------------------------------------------|
+| **wirklich**           | sehr häufig – betont Echtheit und Relevanz       |
+| **persönlich**         | Kernversprechen – Gegenteil zur Agentur          |
+| **gemeinsam**          | signalisiert Partnerschaft, nicht Dienstleistung |
+| **direkt**             | Kommunikation, Erreichbarkeit, kein Umweg        |
+| **Wunschkund:innen**   | ihr eigener Begriff – immer so beibehalten       |
+| **passend / passen**   | Qualität statt Quantität bei Anfragen            |
+| **transparent**        | besonders bei Reporting & Kosten                 |
+| **ehrlich**            | Vertrauen als Fundament                          |
+| **kümmert**            | menschliche Fürsorge, nicht nur Abarbeitung      |
+| **Kein … Kein …**      | rhetorisches Muster zur Vertrauensbildung        |
+| **Kund:innen**         | Gender-Doppelpunkt – ihr bewusster Stil          |
+
+---
+
+## Voice-Check-Kurzformel (vor jeder Textänderung)
+
+1. Klingt das **warm und menschlich** – oder kalt und technisch?
+2. Würde **eine echte Person** so sprechen – oder eine Maschine?
+3. Fühlt es sich **ehrlich** an – oder nach Verkaufsdruck?
+
+Nur wenn alle 3 Fragen positiv beantwortet werden → umsetzen.
+
+---
+
+## Ton in einem Satz
+
+> Kompetente Freundin, die zufällig Google-Ads-Expertin ist – und das ohne Imponiergehabe erklärt.

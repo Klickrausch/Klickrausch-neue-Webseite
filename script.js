@@ -136,36 +136,3 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ─── CONTACT FORM ─── */
-const kForm    = document.getElementById('kForm');
-const kSuccess = document.getElementById('kSuccess');
-
-if (kForm) {
-  kForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const btn = kForm.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Wird gesendet …';
-
-    const data = Object.fromEntries(new FormData(kForm));
-
-    try {
-      const res  = await fetch('https://api.web3forms.com/submit', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify(data)
-      });
-      const json = await res.json();
-      if (json.success) {
-        kForm.style.display = 'none';
-        kSuccess.classList.add('show');
-      } else {
-        throw new Error('Fehler');
-      }
-    } catch {
-      btn.disabled   = false;
-      btn.textContent = 'Nachricht senden';
-      alert('Leider gab es einen Fehler. Schreib mir gerne direkt an impuls@drossbuetow-marketing.de');
-    }
-  });
-}

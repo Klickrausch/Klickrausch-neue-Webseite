@@ -63,12 +63,20 @@
     @media (max-width: 480px) {
       .intro__pain-full { grid-template-columns: 1fr; }
     }
-    /* Kontaktbild: ganze Person sichtbar, kompaktes Quadrat */
+    /* Kontaktbereich: eine Spalte, zentriert */
+    .kontakt__left--full {
+      grid-column: 1 / -1;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    /* Kontaktbild: ganze Person sichtbar */
     .kontakt__photo img {
-      aspect-ratio: 1/1;
-      object-fit: contain;
-      object-position: center center;
-      background: var(--bg-2);
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      max-width: 260px;
+      margin: 0 auto;
+      display: block;
     }
   </style>
   <!-- Calendly popup widget -->
@@ -651,10 +659,10 @@
     <div class="container">
       <div class="kontakt__inner">
 
-        <div class="kontakt__left" data-reveal>
+        <div class="kontakt__left kontakt__left--full" data-reveal>
           <div class="tag">Kontakt</div>
           <h2>Lass uns<br /><em>ins Gespräch kommen.</em></h2>
-          <p>Schreib mir direkt oder nutze das Formular, ich melde mich innerhalb von 24 Stunden persönlich bei dir.</p>
+          <p>Ich melde mich innerhalb von 24 Stunden persönlich bei dir.</p>
           <div class="kontakt__photo">
             <img src="img/foto-kontakt.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin und Freelancerin, freut sich auf deine Nachricht" />
           </div>
@@ -678,42 +686,7 @@
               <div><strong>Instagram</strong><span>@klickrausch</span></div>
             </a>
           </div>
-        </div>
-
-        <div class="kontakt__right" data-reveal data-delay="140">
-          <form class="kform" id="kForm">
-            <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_KEY" />
-            <input type="hidden" name="subject" value="Neue Anfrage über Klickrausch" />
-            <input type="hidden" name="from_name" value="Klickrausch Website" />
-            <input type="checkbox" name="botcheck" style="display:none" />
-            <div class="kform__row">
-              <div class="kfg">
-                <label for="kname">Name*</label>
-                <input type="text" id="kname" name="name" placeholder="Dein Name" required />
-              </div>
-              <div class="kfg">
-                <label for="kemail">E-Mail*</label>
-                <input type="email" id="kemail" name="email" placeholder="deine@email.de" required />
-              </div>
-            </div>
-            <div class="kfg">
-              <label for="kbiz">Dein Business</label>
-              <input type="text" id="kbiz" name="business" placeholder="z.B. Sanitärbetrieb, Coach, Praxis …" />
-            </div>
-            <div class="kfg">
-              <label for="kmsg">Nachricht</label>
-              <textarea id="kmsg" name="message" rows="4" maxlength="500" placeholder="Erzähl mir kurz von deiner Situation und was du dir wünschst …"></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full">
-              Nachricht senden
-            </button>
-            <p class="kform__hint">* Pflichtfelder. Deine Daten werden vertraulich behandelt.</p>
-          </form>
-          <div class="kform__success" id="kSuccess">
-            <div class="success-ic">✓</div>
-            <h3>Deine Nachricht ist angekommen!</h3>
-            <p>Ich melde mich innerhalb von 24 Stunden persönlich bei dir. Bis gleich!</p>
-          </div>
+          <a href="#" class="btn btn--primary" style="margin-top:28px;">Kostenloses Erstgespräch buchen &rarr;</a>
         </div>
 
       </div>

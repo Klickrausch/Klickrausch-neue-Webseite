@@ -96,9 +96,36 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+/* ─── CALENDLY ─── */
+const CAL_URL = 'https://calendly.com/impuls-drossbuetow-marketing/kostenloses-erstgesprach-drossbutow-marketing';
+
+function openCalendly(e) {
+  e.preventDefault();
+  if (typeof Calendly !== 'undefined') {
+    Calendly.initPopupWidget({ url: CAL_URL });
+  } else {
+    window.open(CAL_URL, '_blank');
+  }
+}
+
+// Mobile-Nav CTA (eigene href, daher separat)
+const mobileCta = document.querySelector('.mlink--cta');
+if (mobileCta) {
+  mobileCta.addEventListener('click', e => {
+    mobileNav.classList.remove('open');
+    burger.classList.remove('open');
+    openCalendly(e);
+  });
+}
+
 /* ─── SMOOTH ANCHOR SCROLL ─── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
+    // Calendly: alle "Erstgespräch"-Buttons
+    if (a.textContent.includes('Erstgespräch')) {
+      openCalendly(e);
+      return;
+    }
     const target = document.querySelector(a.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
@@ -114,14 +141,31 @@ const kForm    = document.getElementById('kForm');
 const kSuccess = document.getElementById('kSuccess');
 
 if (kForm) {
-  kForm.addEventListener('submit', e => {
+  kForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = kForm.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Wird gesendet …';
-    setTimeout(() => {
-      kForm.style.display = 'none';
-      kSuccess.classList.add('show');
-    }, 1000);
+
+    const data = Object.fromEntries(new FormData(kForm));
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (json.success) {
+        kForm.style.display = 'none';
+        kSuccess.classList.add('show');
+      } else {
+        throw new Error('Fehler');
+      }
+    } catch {
+      btn.disabled   = false;
+      btn.textContent = 'Nachricht senden';
+      alert('Leider gab es einen Fehler. Schreib mir gerne direkt an impuls@drossbuetow-marketing.de');
+    }
   });
 }

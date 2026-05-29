@@ -71,6 +71,9 @@
       background: var(--bg-2);
     }
   </style>
+  <!-- Calendly popup widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 
@@ -679,23 +682,27 @@
 
         <div class="kontakt__right" data-reveal data-delay="140">
           <form class="kform" id="kForm">
+            <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject" value="Neue Anfrage über Klickrausch" />
+            <input type="hidden" name="from_name" value="Klickrausch Website" />
+            <input type="checkbox" name="botcheck" style="display:none" />
             <div class="kform__row">
               <div class="kfg">
                 <label for="kname">Name*</label>
-                <input type="text" id="kname" placeholder="Dein Name" required />
+                <input type="text" id="kname" name="name" placeholder="Dein Name" required />
               </div>
               <div class="kfg">
                 <label for="kemail">E-Mail*</label>
-                <input type="email" id="kemail" placeholder="deine@email.de" required />
+                <input type="email" id="kemail" name="email" placeholder="deine@email.de" required />
               </div>
             </div>
             <div class="kfg">
               <label for="kbiz">Dein Business</label>
-              <input type="text" id="kbiz" placeholder="z.B. Sanitärbetrieb, Coach, Praxis …" />
+              <input type="text" id="kbiz" name="business" placeholder="z.B. Sanitärbetrieb, Coach, Praxis …" />
             </div>
             <div class="kfg">
               <label for="kmsg">Nachricht</label>
-              <textarea id="kmsg" rows="4" maxlength="500" placeholder="Erzähl mir kurz von deiner Situation und was du dir wünschst …"></textarea>
+              <textarea id="kmsg" name="message" rows="4" maxlength="500" placeholder="Erzähl mir kurz von deiner Situation und was du dir wünschst …"></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--full">
               Nachricht senden

@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     document.body.classList.remove('loading');
     initReveal();
     initCounters();
-  }, 1400);
+  }, 400);
 });
 
 /* ─── NAV SCROLL ─── */

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Ads Freelancerin Düsseldorf – direkt & persönlich</title>
   <meta name="description" content="Google Ads Freelancerin Düsseldorf – ich helfe selbständigen Frauen, ihre Wunschkund:innen zu finden. Persönlich, messbar, kostenloses Erstgespräch." />
-  <link rel="canonical" href="https://klickrausch.github.io/Klickrausch-neue-Webseite/" />
+  <link rel="canonical" href="https://drossbuetow-marketing.de/" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Google Ads Freelancerin Düsseldorf – direkt & persönlich" />
   <meta property="og:description" content="Google Ads Freelancerin Düsseldorf – ich helfe selbständigen Frauen, ihre Wunschkund:innen zu finden. Persönlich, messbar, kostenloses Erstgespräch." />
-  <meta property="og:url" content="https://klickrausch.github.io/Klickrausch-neue-Webseite/" />
-  <meta property="og:image" content="https://klickrausch.github.io/Klickrausch-neue-Webseite/img/foto-hero.jpg" />
+  <meta property="og:url" content="https://drossbuetow-marketing.de/" />
+  <meta property="og:image" content="https://drossbuetow-marketing.de/img/foto-hero.jpg" />
   <meta property="og:locale" content="de_DE" />
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -45,9 +45,11 @@
     }
   }
   </script>
+  <!-- Preload LCP hero image -->
+  <link rel="preload" as="image" href="img/foto-hero.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Pain-Kästchen: volle Breite, 4 Spalten */
@@ -79,8 +81,9 @@
       display: block;
     }
   </style>
-  <!-- Calendly popup widget -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <!-- Calendly popup widget (non-blocking) -->
+  <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" /></noscript>
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
@@ -151,7 +154,7 @@
       <!-- Photo -->
       <div class="hero__photo-col" data-reveal data-delay="100">
         <div class="hero__photo">
-          <img src="img/foto-hero.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin" />
+          <img src="img/foto-hero.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin" fetchpriority="high" loading="eager" />
           <div class="hero__photo-deco hero__photo-deco--1"></div>
           <div class="hero__photo-deco hero__photo-deco--2"></div>
         </div>
@@ -198,7 +201,7 @@
           <a href="#kontakt" class="btn btn--primary" style="margin-top:12px;">Kostenloses Erstgespräch buchen</a>
         </div>
         <div class="intro__visual" data-reveal data-delay="120">
-          <img src="img/foto-intro.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin, analysiert Kampagnendaten auf dem Handy" />
+          <img src="img/foto-intro.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin, analysiert Kampagnendaten auf dem Handy" loading="lazy" />
         </div>
       </div>
       <div class="intro__pain-full" data-reveal data-delay="80">
@@ -461,7 +464,7 @@
         <div class="nadine__photo-col" data-reveal>
           <div class="nadine__frame">
             <div class="nadine__photo">
-              <img src="img/foto-nadine.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin" />
+              <img src="img/foto-nadine.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin" loading="lazy" />
             </div>
             <div class="nadine__cert">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -580,7 +583,7 @@
           <p>Hier findest du Antworten auf die Fragen, die mir Kunden am häufigsten stellen. Du findest deine Frage nicht? Dann schreib mir einfach!</p>
           <a href="#kontakt" class="btn btn--primary" style="margin-top:1.5rem;">Direkt fragen →</a>
           <div class="faq__photo">
-            <img src="img/foto-faq.jpg" alt="Nadine Dross-Buetow, Google Ads Freelancerin, beantwortet Fragen persönlich" />
+            <img src="img/foto-faq.jpg" alt="Nadine Dross-Buetow, Google Ads Freelancerin, beantwortet Fragen persönlich" loading="lazy" />
           </div>
         </div>
         <div class="faq__list" data-reveal data-delay="120">
@@ -670,7 +673,7 @@
           <h2>Lass uns<br /><em>ins Gespräch kommen.</em></h2>
           <p>Ich melde mich innerhalb von 24 Stunden persönlich bei dir.</p>
           <div class="kontakt__photo">
-            <img src="img/foto-kontakt.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin und Freelancerin, freut sich auf deine Nachricht" />
+            <img src="img/foto-kontakt.jpg" alt="Nadine Dross-Buetow, Google Ads Expertin und Freelancerin, freut sich auf deine Nachricht" loading="lazy" />
           </div>
           <div class="kontakt__chs">
             <a href="mailto:impuls@drossbuetow-marketing.de" class="kch">
@@ -703,7 +706,7 @@
   <div class="cert-bar">
     <div class="container">
       <div class="cert-bar__inner" data-reveal>
-        <img src="img/badge-google-ads-certified.jpg" alt="Google Ads Search Certified" class="cert-bar__badge" />
+        <img src="img/badge-google-ads-certified.jpg" alt="Google Ads Search Certified" class="cert-bar__badge" loading="lazy" />
         <div class="cert-bar__text">
           <strong>Google Ads Search Certified</strong>
           <span>Zertifizierte Expertin für Google Suchkampagnen</span>

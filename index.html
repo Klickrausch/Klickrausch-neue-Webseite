@@ -4,6 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif' font-style='italic' fill='%23735240'>K</text></svg>" />
+  <!-- ── KLARO COOKIE CONSENT ── -->
+  <script>
+  var klaroConfig = {
+    version: 1,
+    elementID: 'klaro',
+    lang: 'de',
+    acceptAll: true,
+    hideDeclineAll: false,
+    htmlTexts: true,
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    translations: {
+      de: {
+        privacyPolicyUrl: '/datenschutz.html',
+        consentNotice: {
+          description: 'Diese Website nutzt externe Dienste für Schriftarten und Terminbuchung. Details in unserer <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a>.',
+          learnMore: 'Einstellungen',
+          changeDescription: 'Es gab Änderungen – bitte aktualisiere deine Einstellungen.'
+        },
+        consentModal: {
+          title: 'Deine Cookie-Einstellungen',
+          description: 'Hier kannst du festlegen, welche Dienste aktiviert werden dürfen.',
+          privacyPolicy: { name: 'Datenschutzerklärung', text: 'Mehr dazu in unserer {privacyPolicy}.' }
+        },
+        acceptAll: 'Alle akzeptieren',
+        acceptSelected: 'Auswahl speichern',
+        decline: 'Ablehnen',
+        close: '✕',
+        save: 'Speichern',
+        purposes: { functional: 'Funktional' },
+        service: {
+          disableAll: { title: 'Alle Dienste', description: '' },
+          purpose: 'Zweck', purposes: 'Zwecke'
+        },
+        poweredBy: ''
+      }
+    },
+    services: [
+      {
+        name: 'google-fonts',
+        title: 'Google Fonts',
+        purposes: ['functional'],
+        required: false,
+        default: false,
+        translations: {
+          de: { description: 'Schriftarten werden von Google-Servern geladen. Dabei kann deine IP-Adresse an Google übertragen werden.' }
+        }
+      },
+      {
+        name: 'calendly',
+        title: 'Calendly (Terminbuchung)',
+        purposes: ['functional'],
+        required: false,
+        default: false,
+        translations: {
+          de: { description: 'Ermöglicht die direkte Online-Terminbuchung für das kostenlose Erstgespräch. Daten werden an Calendly LLC (USA) übertragen.' }
+        }
+      }
+    ]
+  };
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/klaro@0.7/dist/klaro.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7/dist/klaro.js" data-config="klaroConfig"></script>
   <title>Google Ads Freelancerin Düsseldorf – direkt & persönlich</title>
   <meta name="description" content="Google Ads Freelancerin Düsseldorf – ich helfe selbständigen Frauen, ihre Wunschkund:innen zu finden. Persönlich, messbar, kostenloses Erstgespräch." />
   <link rel="canonical" href="https://drossbuetow-marketing.de/" />
@@ -81,11 +144,26 @@
       margin: 0 auto;
       display: block;
     }
+    /* ── Klaro: Markenfarben ── */
+    :root { --green1: #735240; --green2: #5c3f30; }
+    .klaro .cookie-modal .cm-btn.cm-btn-success,
+    .klaro .cookie-notice .cn-buttons button.cn-btn.cn-btn-accept-all {
+      background: #735240 !important;
+    }
+    .klaro .cookie-modal .cm-btn.cm-btn-success:hover,
+    .klaro .cookie-notice .cn-buttons button.cn-btn.cn-btn-accept-all:hover {
+      background: #5c3f30 !important;
+    }
+    .klaro .cookie-modal a, .klaro .cookie-notice a { color: #735240 !important; }
+    .klaro .cookie-modal .slider { background: #b7ae9e !important; }
+    .klaro .cookie-modal input:checked + .slider { background: #735240 !important; }
+    .klaro .cookie-notice { font-family: 'Inter', system-ui, sans-serif; }
+    .klaro .cookie-modal .cm-header { border-bottom: 1px solid #e8e4e3; }
   </style>
   <!-- Calendly popup widget (non-blocking) -->
   <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" /></noscript>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script type="text/plain" data-name="calendly" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 

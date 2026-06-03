@@ -113,9 +113,14 @@ ul { list-style: none; }
 
 .nav__logo {
   font-family: var(--serif);
-  font-size: 1.2rem; font-weight: 700;
-  color: var(--brown); letter-spacing: -.01em;
+  font-size: 1.35rem; font-weight: 700;
+  color: var(--brown); letter-spacing: -.03em;
   flex-shrink: 0;
+}
+.nav__logo em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--brown-lt);
 }
 
 .nav__links {
@@ -1119,8 +1124,13 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   gap: 48px; align-items: start; margin-bottom: 40px;
 }
 .footer__logo {
-  font-family: var(--serif); font-size: 1.25rem; font-weight: 700;
-  color: var(--sand); margin-bottom: 10px;
+  font-family: var(--serif); font-size: 1.35rem; font-weight: 700;
+  color: var(--sand); margin-bottom: 10px; letter-spacing: -.03em;
+}
+.footer__logo em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(216,199,178,.6);
 }
 .footer__brand p { font-size: .83rem; color: rgba(216,199,178,.5); max-width: 280px; line-height: 1.6; }
 .footer__ig {

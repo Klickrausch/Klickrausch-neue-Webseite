@@ -56,8 +56,7 @@
         name: 'calendly',
         title: 'Calendly (Terminbuchung)',
         purposes: ['functional'],
-        required: false,
-        default: false,
+        required: true,
         translations: {
           de: { description: 'Ermöglicht die direkte Online-Terminbuchung für das kostenlose Erstgespräch. Daten werden an Calendly LLC (USA) übertragen.' }
         }
@@ -157,8 +156,10 @@
     .klaro .cookie-notice { font-family: 'Inter', system-ui, sans-serif; }
     .klaro .cookie-modal .cm-header { border-bottom: 1px solid #e8e4e3; }
   </style>
-  <!-- Calendly popup widget (geblockt bis Consent) -->
-  <script type="text/plain" data-name="calendly" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly popup widget -->
+  <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" /></noscript>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 

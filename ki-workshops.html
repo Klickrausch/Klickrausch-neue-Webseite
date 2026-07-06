@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif' font-style='italic' fill='%23735240'>K</text></svg>" />
+  <title>KI Workshops Online – Britta Heinemann & Nadine Dross-Bütow | Klickrausch</title>
+  <meta name="description" content="Drei Online-Workshops von Britta Heinemann & Nadine Dross-Bütow: KI verstehen, deinen KI-Assistenten bauen, Claude meistern. Von den Grundlagen bis zum eigenen KI-Agenten." />
+  <!-- ── KLARO COOKIE CONSENT ── -->
+  <script>
+  var klaroConfig = {
+    version: 1,
+    elementID: 'klaro',
+    lang: 'de',
+    acceptAll: true,
+    hideDeclineAll: false,
+    htmlTexts: true,
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    translations: {
+      de: {
+        privacyPolicyUrl: '/datenschutz.html',
+        consentNotice: {
+          description: 'Diese Website nutzt externe Dienste. Details in unserer <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a>.',
+          learnMore: 'Einstellungen',
+          changeDescription: 'Es gab Änderungen – bitte aktualisiere deine Einstellungen.'
+        },
+        consentModal: {
+          title: 'Deine Cookie-Einstellungen',
+          description: 'Hier kannst du festlegen, welche Dienste aktiviert werden dürfen.',
+          privacyPolicy: { name: 'Datenschutzerklärung', text: 'Mehr dazu in unserer {privacyPolicy}.' }
+        },
+        acceptAll: 'Alle akzeptieren',
+        acceptSelected: 'Auswahl speichern',
+        decline: 'Ablehnen',
+        close: '✕',
+        save: 'Speichern',
+        purposes: { functional: 'Funktional', marketing: 'Marketing' },
+        service: {
+          disableAll: { title: 'Alle Dienste', description: '' },
+          purpose: 'Zweck', purposes: 'Zwecke'
+        },
+        poweredBy: ''
+      }
+    },
+    services: [
+      {
+        name: 'brevo',
+        title: 'Brevo (Warteliste)',
+        purposes: ['functional'],
+        required: false,
+        default: false,
+        translations: {
+          de: { description: 'Das Wartelisten-Formular wird über Brevo (ehemals Sendinblue) betrieben. Dabei kann deine E-Mail-Adresse und IP-Adresse an Brevo übertragen werden.' }
+        }
+      },
+      {
+        name: 'recaptcha',
+        title: 'Google reCAPTCHA',
+        purposes: ['functional'],
+        required: false,
+        default: false,
+        translations: {
+          de: { description: 'Schützt das Formular vor Spam-Einträgen. Google kann dabei technische Daten verarbeiten.' }
+        }
+      }
+    ]
+  };
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/klaro@0.7/dist/klaro.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7/dist/klaro.js" data-config="klaroConfig"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <style>
+    /* ── Klaro: Markenfarben ── */
+    :root { --green1: #735240; --green2: #5c3f30; }
+    .klaro .cookie-modal .cm-btn.cm-btn-success,
+    .klaro .cookie-notice .cn-buttons button.cn-btn.cn-btn-accept-all {
+      background: #735240 !important;
+    }
+    .klaro .cookie-modal .cm-btn.cm-btn-success:hover,
+    .klaro .cookie-notice .cn-buttons button.cn-btn.cn-btn-accept-all:hover {
+      background: #5c3f30 !important;
+    }
+    .klaro .cookie-modal a, .klaro .cookie-notice a { color: #735240 !important; }
+    .klaro .cookie-modal .slider { background: #b7ae9e !important; }
+    .klaro .cookie-modal input:checked + .slider { background: #735240 !important; }
+    .klaro .cookie-notice { font-family: 'Inter', system-ui, sans-serif; }
+    .klaro .cookie-modal .cm-header { border-bottom: 1px solid #e8e4e3; }
+
+    /* ── KI Workshop: Reset & Basis ── */
+    .kiw *, .kiw *::before, .kiw *::after { box-sizing: border-box; }
+    .kiw ul { margin: 0; padding: 0; list-style: none; }
+    .kiw p, .kiw h1, .kiw h2, .kiw h3 { margin: 0; }
+
+    @media (max-width: 800px) {
+      .kiw-hero { grid-template-columns: 1fr !important; }
+      .kiw-hero-photo { display: block !important; min-height: 240px !important; }
+      .kiw-hero-text { padding: 52px 24px !important; }
+      .kiw-h1 { font-size: 36px !important; }
+      .kiw-section { padding: 56px 24px !important; }
+      .kiw-grid3 { grid-template-columns: 1fr !important; }
+      .kiw-trainer-card { grid-template-columns: 1fr !important; }
+      .kiw-trainer-img { height: 300px !important; object-position: center 55% !important; }
+      .kiw-trainer-img.nadine { object-position: center 25% !important; }
+      .kiw-waitlist { grid-template-columns: 1fr !important; }
+      .kiw-waitlist-photo { display: none !important; }
+      .kiw-waitlist-form { padding: 48px 24px !important; }
+      .kiw-h2 { font-size: 28px !important; }
+      #sib-container { max-width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__wrap">
+      <a href="index.html" class="nav__logo">Klick<em>rausch</em></a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <a href="index.html#nadine">Über mich</a>
+        <a href="index.html#angebot">Angebot & Preise</a>
+        <a href="ki-workshops.html" style="color:var(--brown);font-weight:600">KI Workshops</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <a href="index.html#kontakt" class="nav__btn">Kostenloses Erstgespräch</a>
+      <button class="nav__burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileNav">
+      <a href="index.html#nadine" class="mlink">Über mich</a>
+      <a href="index.html#angebot" class="mlink">Angebot & Preise</a>
+      <a href="ki-workshops.html" class="mlink">KI Workshops</a>
+      <a href="index.html#faq" class="mlink">FAQ</a>
+      <a href="index.html#kontakt" class="mlink">Kontakt</a>
+      <a href="index.html#kontakt" class="mlink mlink--cta">Kostenloses Erstgespräch buchen</a>
+    </div>
+  </header>
+
+  <!-- ═══════════ KI WORKSHOP INHALT ═══════════ -->
+  <div class="kiw" style="padding-top:72px">
+
+  <!-- HERO -->
+  <section class="kiw-hero" style="min-height:560px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden">
+    <div class="kiw-hero-text" style="background:#1e1e1e;padding:80px 56px;display:flex;flex-direction:column;justify-content:center">
+      <div style="display:inline-block;background:rgba(196,154,90,.18);border:1px solid rgba(196,154,90,.35);color:#c49a5a;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:28px;width:fit-content">Online Workshops · 3 Level · Dein Tempo</div>
+      <h1 class="kiw-h1" style="font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:#fff;line-height:1.08;margin:0 0 22px">Mach KI zu deinem<br><em style="color:#c49a5a">Werkzeug.</em></h1>
+      <p style="font-family:'Inter',sans-serif;font-size:17px;font-weight:300;color:#c8c5bd;line-height:1.65;margin:0 0 34px">Drei intensive Workshops. Von den Grundlagen bis zum eigenen KI-Agenten und umfassendem Wissen über Claude.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#kiw-kurse" onclick="event.preventDefault();var el=document.getElementById('kiw-kurse');if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'});}" style="display:inline-block;background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:15px 32px;border-radius:6px;text-decoration:none;box-shadow:0 4px 20px rgba(196,154,90,.35)">Kurse entdecken</a>
+        <a href="#kiw-waitlist" onclick="event.preventDefault();var el=document.getElementById('kiw-waitlist');if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'});}" style="display:inline-block;background:transparent;color:#c49a5a;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:15px 28px;border-radius:6px;text-decoration:none;border:2px solid rgba(196,154,90,.5)">Auf die Warteliste</a>
+      </div>
+    </div>
+    <div class="kiw-hero-photo" style="position:relative;overflow:hidden;min-height:240px">
+      <img src="https://brittaheinemann.de/wp-content/uploads/2026/06/team-hero.jpg" alt="Britta Heinemann und Nadine Dross-Bütow" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,#1e1e1e 0%,rgba(20,18,16,.1) 14%,transparent 28%)"></div>
+    </div>
+  </section>
+
+  <!-- KURSE -->
+  <section id="kiw-kurse" class="kiw-section" style="background:#faf8f4;padding:80px 56px">
+    <div style="text-align:center;margin-bottom:52px">
+      <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c49a5a;display:block;margin-bottom:14px">Die drei Workshops</span>
+      <h2 class="kiw-h2" style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#1e1e1e;line-height:1.2">Schritt für Schritt zum <em style="color:#c49a5a">KI-Profi.</em></h2>
+    </div>
+    <div class="kiw-grid3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;max-width:1040px;margin:0 auto">
+
+      <div style="background:#fff;border-radius:10px;border:1px solid #ede9e0;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.04)">
+        <div style="height:4px;background:#c49a5a"></div>
+        <div style="padding:30px 26px;flex:1;display:flex;flex-direction:column">
+          <span style="display:inline-block;background:#f0e0c4;color:#a07a3a;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px">Level 1 · Basis</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#1e1e1e;margin:0 0 8px;line-height:1.3">KI verstehen &amp;<br>richtig prompten</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#c49a5a;font-weight:600;margin:0 0 6px">2 Std. · Online · 99 €</p>
+          <div style="background:#f0e0c4;border-radius:6px;padding:8px 12px;margin-bottom:18px">
+            <p style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#a07a3a;margin:0 0 2px">Mo. 20. Juli 2026</p>
+            <p style="font-family:'Inter',sans-serif;font-size:12px;color:#a07a3a;margin:0">10:00–12:00 Uhr &nbsp;·&nbsp; 17:00–19:00 Uhr</p>
+          </div>
+          <div style="width:32px;height:2px;background:#c49a5a;margin-bottom:18px;border-radius:2px"></div>
+          <ul style="display:flex;flex-direction:column;gap:8px;margin:0 0 auto">
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Wie KI wirklich denkt &amp; sucht</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Ethik &amp; Datenschutz im Alltag</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Das 5-Teile-Prompt-Framework</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Grundeinstellungen &amp; Datenschutz</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Die wichtigsten Tools im Überblick</li>
+          </ul>
+          <a href="https://buy.stripe.com/7sYfZg7bA7lUcXO0xDdIA03" target="_blank" rel="noopener" style="display:block;margin-top:24px;background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(196,154,90,.3)">Jetzt buchen →</a>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;border:1px solid #ede9e0;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.04)">
+        <div style="height:4px;background:#c49a5a"></div>
+        <div style="padding:30px 26px;flex:1;display:flex;flex-direction:column">
+          <span style="display:inline-block;background:#f0e0c4;color:#a07a3a;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px">Level 2 · Fortgeschrittene</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#1e1e1e;margin:0 0 8px;line-height:1.3">Deinen KI-Assistenten<br>bauen</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#c49a5a;font-weight:600;margin:0 0 6px">2 Std. · Online · 129 €</p>
+          <div style="background:#f0e0c4;border-radius:6px;padding:8px 12px;margin-bottom:18px">
+            <p style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#a07a3a;margin:0 0 2px">Mi. 22. Juli 2026</p>
+            <p style="font-family:'Inter',sans-serif;font-size:12px;color:#a07a3a;margin:0">10:00–12:00 Uhr &nbsp;·&nbsp; 17:00–19:00 Uhr</p>
+          </div>
+          <div style="width:32px;height:2px;background:#c49a5a;margin-bottom:18px;border-radius:2px"></div>
+          <ul style="display:flex;flex-direction:column;gap:8px;margin:0 0 auto">
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>KI-Assistent in 5 Schritten aufbauen</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Die 18 Fragen, die ihn zu dir machen</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Zielgruppe &amp; Content-Ideen generieren</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Erste Automatisierungen einrichten</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Sichtbarkeit &amp; Kundengewinnung</li>
+          </ul>
+          <a href="https://buy.stripe.com/bJefZg1RggWu7Du949dIA04" target="_blank" rel="noopener" style="display:block;margin-top:24px;background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(196,154,90,.3)">Jetzt buchen →</a>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;border:1px solid #ede9e0;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.04)">
+        <div style="height:4px;background:#c49a5a"></div>
+        <div style="padding:30px 26px;flex:1;display:flex;flex-direction:column">
+          <span style="display:inline-block;background:#f0e0c4;color:#a07a3a;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px">Level 3 · Claude Intensiv</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#1e1e1e;margin:0 0 8px;line-height:1.3">Claude meistern &amp;<br>tief einsteigen</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#c49a5a;font-weight:600;margin:0 0 6px">2 Std. · Online · 149 €</p>
+          <div style="background:#f0e0c4;border-radius:6px;padding:8px 12px;margin-bottom:18px">
+            <p style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#a07a3a;margin:0 0 2px">Fr. 24. Juli 2026</p>
+            <p style="font-family:'Inter',sans-serif;font-size:12px;color:#a07a3a;margin:0">11:00–13:00 Uhr</p>
+          </div>
+          <div style="width:32px;height:2px;background:#c49a5a;margin-bottom:18px;border-radius:2px"></div>
+          <ul style="display:flex;flex-direction:column;gap:8px;margin:0 0 auto">
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Claude komplett, alle Features erklärt</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Chat, Cowork, Code &amp; Design im Vergleich</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Was man womit am besten macht</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Projekte, Prompts &amp; Workflows aufbauen</li>
+            <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px;line-height:1.45"><span style="color:#c49a5a;font-weight:700;flex-shrink:0">→</span>Nächste Schritte &amp; eigene Anwendungen</li>
+          </ul>
+          <a href="https://buy.stripe.com/cNi4gy7bAgWu1f61BHdIA05" target="_blank" rel="noopener" style="display:block;margin-top:24px;background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(196,154,90,.3)">Jetzt buchen →</a>
+        </div>
+      </div>
+
+    </div>
+    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#999;text-align:center;margin:28px auto 0;max-width:600px;line-height:1.7">* Weitere Termine sind in Planung. Wenn du diesen Termin nicht wahrnehmen kannst, trag dich einfach auf die <a href="#kiw-waitlist" style="color:#c49a5a;text-decoration:none;font-weight:600">Warteliste</a> ein — wir benachrichtigen dich als Erstes, sobald neue Termine feststehen.</p>
+  </section>
+
+  <!-- PREISE -->
+  <section class="kiw-section" style="background:#fff;padding:80px 56px">
+    <div style="text-align:center;margin-bottom:52px">
+      <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c49a5a;display:block;margin-bottom:14px">Preise &amp; Pakete</span>
+      <h2 class="kiw-h2" style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#1e1e1e;line-height:1.2">Flexibel wählen. <em style="color:#c49a5a">Mehr sparen.</em></h2>
+    </div>
+    <div class="kiw-grid3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;max-width:880px;margin:0 auto">
+
+      <div style="background:#faf8f4;border-radius:10px;border:1px solid #ede9e0;padding:34px 26px;text-align:center;display:flex;flex-direction:column">
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin:0 0 16px">Einzelkurs</p>
+        <p style="font-family:'Playfair Display',serif;font-size:46px;font-weight:700;color:#1e1e1e;margin:0 0 6px;line-height:1">ab 99 <span style="font-size:20px;font-weight:400">€</span></p>
+        <div style="font-family:'Inter',sans-serif;font-size:12px;color:#aaa;margin:0 0 24px;line-height:1.9">Basis 99 € · Fortgeschrittene 129 €<br>Claude Intensiv 149 €</div>
+        <div style="width:100%;height:1px;background:#ede9e0;margin-bottom:22px"></div>
+        <ul style="display:flex;flex-direction:column;gap:9px;text-align:left;margin:0 0 24px">
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>1 Workshop deiner Wahl</li>
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>2 Std. Live-Intensivsession</li>
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>KI-Workbook &amp; Materialien</li>
+        </ul>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:auto">
+          <a href="https://buy.stripe.com/7sYfZg7bA7lUcXO0xDdIA03" target="_blank" rel="noopener" style="display:block;background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:10px 16px;border-radius:6px;text-decoration:none;text-align:center">Basis buchen (99 €)</a>
+          <a href="https://buy.stripe.com/bJefZg1RggWu7Du949dIA04" target="_blank" rel="noopener" style="display:block;background:transparent;color:#a07a3a;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:10px 16px;border-radius:6px;text-decoration:none;text-align:center;border:1.5px solid #c49a5a">Fortgeschritten (129 €)</a>
+          <a href="https://buy.stripe.com/cNi4gy7bAgWu1f61BHdIA05" target="_blank" rel="noopener" style="display:block;background:transparent;color:#a07a3a;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:10px 16px;border-radius:6px;text-decoration:none;text-align:center;border:1.5px solid #c49a5a">Claude Intensiv (149 €)</a>
+        </div>
+      </div>
+
+      <div style="background:#f5ead8;border-radius:10px;border:1px solid #e8d5b8;padding:34px 26px;text-align:center;display:flex;flex-direction:column">
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin:0 0 16px">Basis + Fortgeschrittene</p>
+        <p style="font-family:'Playfair Display',serif;font-size:46px;font-weight:700;color:#1e1e1e;margin:0 0 4px;line-height:1">199 <span style="font-size:20px;font-weight:400">€</span></p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:#bbb;margin:0 0 4px;text-decoration:line-through">228 €</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:#a07a3a;margin:0 0 24px">Du sparst 29 €</p>
+        <div style="width:100%;height:1px;background:#e8d5b8;margin-bottom:22px"></div>
+        <ul style="display:flex;flex-direction:column;gap:9px;text-align:left;margin:0 0 24px">
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>Level 1 &amp; Level 2</li>
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>4 Std. Live-Training</li>
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#555550;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>KI-Workbook &amp; Materialien</li>
+        </ul>
+        <a href="https://buy.stripe.com/28EaEWcvU7lU0b2805dIA06" target="_blank" rel="noopener" style="display:block;margin-top:auto;background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(196,154,90,.3)">Jetzt buchen →</a>
+      </div>
+
+      <div style="background:#1e1e1e;border-radius:10px;padding:34px 26px;text-align:center;position:relative;display:flex;flex-direction:column">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 18px;border-radius:20px;white-space:nowrap">Empfohlen</div>
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 16px">Alle 3 Kurse</p>
+        <p style="font-family:'Playfair Display',serif;font-size:46px;font-weight:700;color:#fff;margin:0 0 4px;line-height:1">299 <span style="font-size:20px;font-weight:400">€</span></p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:#555;margin:0 0 4px;text-decoration:line-through">377 €</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:#c49a5a;margin:0 0 24px">Du sparst 78 €</p>
+        <div style="width:100%;height:1px;background:#333;margin-bottom:22px"></div>
+        <ul style="display:flex;flex-direction:column;gap:9px;text-align:left;margin:0 0 24px">
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#c8c5bd;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>Alle 3 Workshops</li>
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#c8c5bd;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>6 Std. Live-Training komplett</li>
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#c8c5bd;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>KI-Workbook &amp; alle Materialien</li>
+          <li style="font-family:'Inter',sans-serif;font-size:14px;color:#c8c5bd;display:flex;gap:9px"><span style="color:#c49a5a;font-weight:700">✓</span>Kompletter KI-Einstieg</li>
+        </ul>
+        <a href="https://buy.stripe.com/cNi28q9jI21AaPGcgldIA07" target="_blank" rel="noopener" style="display:block;margin-top:auto;background:#c49a5a;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;box-shadow:0 4px 16px rgba(196,154,90,.4)">Jetzt buchen →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREMIUM / 1:1 -->
+  <section class="kiw-section" style="background:#faf8f4;padding:80px 56px">
+    <div style="text-align:center;margin-bottom:52px">
+      <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c49a5a;display:block;margin-bottom:14px">Mehr als ein Workshop</span>
+      <h2 class="kiw-h2" style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#1e1e1e;line-height:1.2">Individuelle <em style="color:#c49a5a">Begleitung.</em></h2>
+      <p style="font-family:'Inter',sans-serif;font-size:16px;font-weight:300;color:#555550;margin:14px auto 0;max-width:520px;line-height:1.65">Ihr wollt tiefer gehen oder als Team starten? Wir sind auch jenseits der Gruppen-Workshops buchbar.</p>
+    </div>
+    <div class="kiw-grid3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;max-width:980px;margin:0 auto">
+      <div style="background:#fff;border-radius:10px;border:1px solid #ede9e0;padding:34px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04)">
+        <div style="width:44px;height:44px;border-radius:8px;background:#f0e0c4;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+          <svg width="22" height="22" fill="none" stroke="#a07a3a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#1e1e1e;margin:0 0 10px">1:1 Begleitung</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:#555550;line-height:1.65;margin:0 0 24px">Persönliches Coaching, individuell auf dein Business abgestimmt. Wir schauen gemeinsam, wo KI den größten Unterschied macht.</p>
+        <a href="https://calendly.com/kontakt-brittaheinemann" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#c49a5a;text-decoration:none">Anfragen →</a>
+      </div>
+      <div style="background:#fff;border-radius:10px;border:1px solid #ede9e0;padding:34px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04)">
+        <div style="width:44px;height:44px;border-radius:8px;background:#f0e0c4;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+          <svg width="22" height="22" fill="none" stroke="#a07a3a" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#1e1e1e;margin:0 0 10px">Done with You</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:#555550;line-height:1.65;margin:0 0 24px">Wir arbeiten gemeinsam an eurem Projekt, ob KI-Assistent, Content-System oder Automatisierung. Ihr lernt, wir begleiten.</p>
+        <a href="https://calendly.com/kontakt-brittaheinemann" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#c49a5a;text-decoration:none">Anfragen →</a>
+      </div>
+      <div style="background:#fff;border-radius:10px;border:1px solid #ede9e0;padding:34px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04)">
+        <div style="width:44px;height:44px;border-radius:8px;background:#f0e0c4;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+          <svg width="22" height="22" fill="none" stroke="#a07a3a" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#1e1e1e;margin:0 0 10px">Firmen &amp; Teams</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:#555550;line-height:1.65;margin:0 0 24px">Inhouse-Workshops vor Ort oder online. Wir kommen zu euch und schulen euer Team direkt an euren Prozessen.</p>
+        <a href="https://calendly.com/kontakt-brittaheinemann" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#c49a5a;text-decoration:none">Anfragen →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERINNEN -->
+  <section class="kiw-section" style="background:#fff;padding:80px 56px">
+    <div style="text-align:center;margin-bottom:48px">
+      <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c49a5a;display:block;margin-bottom:14px">Eure Trainerinnen</span>
+      <h2 class="kiw-h2" style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#1e1e1e;line-height:1.2">Zwei Perspektiven. <em style="color:#c49a5a">Ein Ziel.</em></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px;max-width:800px;margin:0 auto">
+      <div class="kiw-trainer-card" style="background:#faf8f4;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:200px 1fr;border:1px solid #ede9e0">
+        <img class="kiw-trainer-img" src="https://brittaheinemann.de/wp-content/uploads/2026/06/ki-britta-2.jpg" alt="Britta Heinemann" style="width:100%;height:220px;object-fit:cover;object-position:center 62%;display:block">
+        <div style="padding:28px 32px;display:flex;flex-direction:column;justify-content:center">
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1e1e1e;margin:0 0 6px">Britta Heinemann</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c49a5a;margin:8px 0 18px">Marketing-Strategin · KI-Expertin &amp; zertifiziert</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:#555550;line-height:1.65;margin:0 0 14px">Marketing-Strategin mit Unternehmenserfahrung und KI-Zertifizierung. Britta zeigt dir, wie du KI-Strategie so einsetzt, dass dein Business wächst, praxisnah und direkt umsetzbar.</p>
+          <a href="https://brittaheinemann.de" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#c49a5a;text-decoration:none">Mehr über Britta →</a>
+        </div>
+      </div>
+      <div class="kiw-trainer-card" style="background:#faf8f4;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:200px 1fr;border:1px solid #ede9e0">
+        <img class="kiw-trainer-img nadine" src="https://brittaheinemann.de/wp-content/uploads/2026/06/ki-Nadine-1.jpg" alt="Nadine Dross-Bütow" style="width:100%;height:220px;object-fit:cover;object-position:center 40%;display:block">
+        <div style="padding:28px 32px;display:flex;flex-direction:column;justify-content:center">
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1e1e1e;margin:0 0 6px">Nadine Dross-Bütow</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c49a5a;margin:8px 0 18px">Google Ads &amp; KI-Expertin · KI-zertifiziert</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:#555550;line-height:1.65;margin:0 0 14px">Google-Ads-Expertin und KI-zertifiziert. Nadine bringt dir bei, wie du online gefunden wirst, mit System, mit Performance, mit KI als Rückenwind.</p>
+          <a href="https://drossbuetow-marketing.de" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#c49a5a;text-decoration:none">Mehr über Nadine →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WARTELISTE -->
+  <section id="kiw-waitlist" class="kiw-waitlist" style="display:grid;grid-template-columns:1fr 1fr;min-height:500px;background:#fff">
+    <div class="kiw-waitlist-photo" style="position:relative;overflow:hidden;min-height:400px">
+      <img src="https://brittaheinemann.de/wp-content/uploads/2026/06/Bild-warteliste.jpg" alt="Britta und Nadine" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block">
+    </div>
+    <div class="kiw-waitlist-form" style="display:flex;align-items:center;justify-content:center;padding:48px 40px;background:#fff">
+      <div class="sib-form" style="text-align:center;background-color:transparent;width:100%">
+        <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px;max-width:540px">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width:20px;height:20px"><path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"/></svg>
+              <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
+            </div>
+          </div>
+          <div id="success-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:16px;text-align:left;color:#085229;background-color:#e7faf0;border-color:#13ce66;border-radius:3px;max-width:540px">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width:20px;height:20px"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"/></svg>
+              <span class="sib-form-message-panel__inner-text">Super! Deine Anmeldung war erfolgreich.</span>
+            </div>
+          </div>
+          <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:540px;text-align:center;background-color:rgba(255,255,255,1);border-width:1px;border-style:solid;border-color:#C0CCD9;border-radius:3px;direction:ltr">
+            <form id="sib-form" method="POST" action="https://cdc154f7.sibforms.com/serve/MUIFALZneiAW_o4AKnkSProuVRYjCktQQZsRRWpAcXDb6O7DcCPj_hpCJ8w-YS7g3OPgbBBMBMjVReCHEk_QcERG61q-RpnMWoYzAgRxuHfLMsS8V9hDGNF8OlNAVa0FO9hEQ1oOaCY0cfqodzMCOf4fsJLy96kJwHCyhvmW57NsfINyNc4sf_stWcKEcDMIqPpI26_The8a3OoMaA==" data-type="subscription">
+              <div style="padding:8px 0">
+                <div class="sib-form-block" style="font-family:Helvetica,sans-serif;font-size:28px;font-weight:700;text-align:left;color:#c49a5a"><p>KI Workshop Warteliste</p></div>
+              </div>
+              <div style="padding:8px 0">
+                <div class="sib-form-block" style="font-family:Helvetica,sans-serif;font-size:14px;text-align:left;color:#3C4858">
+                  <div class="sib-text-form-block"><p>Erfahre direkt, wann die nächsten KI Workshop-Termine feststehen.</p></div>
+                </div>
+              </div>
+              <div style="padding:8px 0">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" style="font-weight:700;text-align:left;font-family:Helvetica,sans-serif;font-size:16px;color:#3c4858" for="EMAIL" data-required="*">E-Mail-Adresse</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="deine@email.de" data-required="true" required>
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:Helvetica,sans-serif;font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px"></label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding:8px 0">
+                <div class="sib-optin sib-form-block">
+                  <div class="form__entry entry_mcq">
+                    <div class="form__label-row">
+                      <div class="entry__choice">
+                        <label>
+                          <input type="checkbox" class="input_replaced" value="1" id="KI_WORKSHOP" name="KI_WORKSHOP">
+                          <span class="checkbox checkbox_tick_positive"></span>
+                          <span style="font-family:Helvetica,sans-serif;font-size:14px;text-align:left;color:#3C4858"><p>Ich akzeptiere die <a href="datenschutz.html" style="color:#c49a5a">Datenschutzerklärung</a>.</p></span>
+                        </label>
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:Helvetica,sans-serif;font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px"></label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding:8px 0">
+                <div class="g-recaptcha-v3" data-sitekey="6LdxEDUtAAAAACjEkJKtKoEcPknA8syHc3Z2LXaj" style="display:none"></div>
+              </div>
+              <div style="padding:8px 0">
+                <div class="sib-form-block" style="text-align:center">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:Helvetica,sans-serif;font-size:16px;font-weight:700;text-align:center;color:#FFFFFF;background-color:#c49a5a;border-width:0px;border-radius:3px" form="sib-form" type="submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
+                    AUF WARTELISTE
+                  </button>
+                </div>
+              </div>
+              <input type="text" name="email_address_check" value="" class="input--hidden">
+              <input type="hidden" name="locale" value="de">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="kiw-section" style="background:#faf8f4;padding:80px 56px">
+    <div style="text-align:center;margin-bottom:44px">
+      <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c49a5a;display:block;margin-bottom:14px">Häufige Fragen</span>
+      <h2 class="kiw-h2" style="font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1e1e1e;line-height:1.2">Noch Fragen?</h2>
+    </div>
+    <div style="max-width:660px;margin:0 auto">
+      <div class="kiw-faq-item" style="border-top:1px solid #ede9e0">
+        <button onclick="kiwToggle(this)" style="width:100%;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px">
+          <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:#1e1e1e">Brauche ich Vorkenntnisse?</span>
+          <span style="color:#c49a5a;font-size:22px;font-weight:300;flex-shrink:0;line-height:1">+</span>
+        </button>
+        <div class="kiw-faq-answer" style="display:none;padding:0 0 18px"><p style="font-family:'Inter',sans-serif;font-size:15px;color:#555550;line-height:1.7;margin:0">Level 1 (Basis) ist für alle offen, auch ohne Vorkenntnisse. Für Level 2 empfehlen wir Level 1 als Grundlage oder eigene KI-Erfahrung.</p></div>
+      </div>
+      <div class="kiw-faq-item" style="border-top:1px solid #ede9e0">
+        <button onclick="kiwToggle(this)" style="width:100%;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px">
+          <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:#1e1e1e">Welche Tools brauche ich?</span>
+          <span style="color:#c49a5a;font-size:22px;font-weight:300;flex-shrink:0;line-height:1">+</span>
+        </button>
+        <div class="kiw-faq-answer" style="display:none;padding:0 0 18px"><p style="font-family:'Inter',sans-serif;font-size:15px;color:#555550;line-height:1.7;margin:0">Eine kostenlose Version von ChatGPT oder Claude reicht für den Start. Welches Tool du wofür nutzt, das klären wir im Workshop.</p></div>
+      </div>
+      <div class="kiw-faq-item" style="border-top:1px solid #ede9e0">
+        <button onclick="kiwToggle(this)" style="width:100%;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px">
+          <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:#1e1e1e">Wie läuft der Workshop ab?</span>
+          <span style="color:#c49a5a;font-size:22px;font-weight:300;flex-shrink:0;line-height:1">+</span>
+        </button>
+        <div class="kiw-faq-answer" style="display:none;padding:0 0 18px"><p style="font-family:'Inter',sans-serif;font-size:15px;color:#555550;line-height:1.7;margin:0">Live online via Google Meet, kein Download nötig, alles läuft im Browser. Wir arbeiten in kleinen Gruppen, damit jede Teilnehmerin echte Aufmerksamkeit bekommt.</p></div>
+      </div>
+      <div class="kiw-faq-item" style="border-top:1px solid #ede9e0">
+        <button onclick="kiwToggle(this)" style="width:100%;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px">
+          <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:#1e1e1e">Wann gibt es Termine?</span>
+          <span style="color:#c49a5a;font-size:22px;font-weight:300;flex-shrink:0;line-height:1">+</span>
+        </button>
+        <div class="kiw-faq-answer" style="display:none;padding:0 0 18px"><p style="font-family:'Inter',sans-serif;font-size:15px;color:#555550;line-height:1.7;margin:0">Die Termine sind in Planung. Am schnellsten informiert bist du über die Warteliste.</p></div>
+      </div>
+      <div class="kiw-faq-item" style="border-top:1px solid #ede9e0;border-bottom:1px solid #ede9e0">
+        <button onclick="kiwToggle(this)" style="width:100%;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px">
+          <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:#1e1e1e">Gibt es Unterlagen zum Mitnehmen?</span>
+          <span style="color:#c49a5a;font-size:22px;font-weight:300;flex-shrink:0;line-height:1">+</span>
+        </button>
+        <div class="kiw-faq-answer" style="display:none;padding:0 0 18px"><p style="font-family:'Inter',sans-serif;font-size:15px;color:#555550;line-height:1.7;margin:0">Ja! Du bekommst das KI-Workbook mit den 18 Fragen, einer Prompt-Sammlung und Tool-Übersicht, zum Behalten und Nachschlagen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /.kiw -->
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">Klick<em>rausch</em></div>
+          <p>Google Ads & Performance Marketing für selbständige Frauen deutschlandweit.</p>
+          <a href="https://instagram.com/klickrausch" target="_blank" class="footer__ig" aria-label="Instagram">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <strong>Angebot</strong>
+            <ul>
+              <li><a href="index.html#angebot">Google Suchkampagnen</a></li>
+              <li><a href="index.html#angebot">Landing Pages</a></li>
+              <li><a href="index.html#angebot">Kampagnen-Check-Up</a></li>
+              <li><a href="ki-workshops.html">KI Workshops</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <strong>Navigation</strong>
+            <ul>
+              <li><a href="index.html#nadine">Über mich</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+              <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <strong>Rechtliches</strong>
+            <ul>
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutz.html">Datenschutz</a></li>
+              <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Cookie-Einstellungen</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Klickrausch · Nadine Dross-Buetow. Alle Rechte vorbehalten.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Bitte Ländervorwahl wählen.';
+    window.LOCALE = 'de';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Bitte gib eine gültige E-Mail-Adresse ein.";
+    window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
+    window.GENERIC_INVALID_MESSAGE = "Ungültige Eingabe.";
+    window.INVALID_NUMBER = "Ungültige Eingabe.";
+    window.INVALID_DATE = "Bitte gib ein gültiges Datum ein.";
+    window.REQUIRED_MULTISELECT_MESSAGE = 'Bitte mindestens eine Option wählen.';
+    var AUTOHIDE = Boolean(0);
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdxEDUtAAAAACjEkJKtKoEcPknA8syHc3Z2LXaj&hl=de" async defer></script>
+
+  <script>
+    // Nav mobile burger
+    const burger = document.getElementById('burger');
+    const mobileNav = document.getElementById('mobileNav');
+    burger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    document.querySelectorAll('.mlink').forEach(l =>
+      l.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        burger.classList.remove('open');
+      })
+    );
+
+    // FAQ Toggle
+    function kiwToggle(btn) {
+      var answer = btn.nextElementSibling;
+      var icon = btn.querySelector('span:last-child');
+      var isOpen = answer.style.display === 'block';
+      document.querySelectorAll('.kiw-faq-answer').forEach(function(a) { a.style.display = 'none'; });
+      document.querySelectorAll('.kiw-faq-item button span:last-child').forEach(function(i) { i.textContent = '+'; });
+      if (!isOpen) { answer.style.display = 'block'; icon.textContent = '−'; }
+    }
+  </script>
+
+</body>
+</html>

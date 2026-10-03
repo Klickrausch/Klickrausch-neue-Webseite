@@ -4,12 +4,10 @@
 
 /* ─── LOADER ─── */
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('out');
-    document.body.classList.remove('loading');
-    initReveal();
-    initCounters();
-  }, 400);
+  document.getElementById('loader').classList.add('out');
+  document.body.classList.remove('loading');
+  initReveal();
+  initCounters();
 });
 
 /* ─── NAV SCROLL ─── */
@@ -104,7 +102,7 @@ function openCalendly(e) {
   if (typeof Calendly !== 'undefined') {
     Calendly.initPopupWidget({ url: CAL_URL });
   } else {
-    window.open(CAL_URL, '_blank');
+    window.location.href = CAL_URL;
   }
 }
 

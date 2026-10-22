@@ -79,7 +79,7 @@
   --ease-std: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text-1);
@@ -1433,6 +1433,7 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   .hero__stat-card--a { left: 0; }
   .hero__stat-card--b { right: 0; }
   .intro__inner      { grid-template-columns: 1fr; gap: 40px; }
+  .intro__visual     { max-width: 400px; margin: 0 auto; }
   .schritte__grid    { grid-template-columns: 1fr; gap: 2px; border-radius: var(--r-lg); }
   .l-grid            { grid-template-columns: 1fr; }
   .lo-grid           { grid-template-columns: 1fr; }
@@ -1441,7 +1442,9 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   .nadine__photo-col { max-width: 340px; margin: 0 auto; }
   .testi-grid        { grid-template-columns: 1fr; }
   .faq__inner        { grid-template-columns: 1fr; gap: 40px; }
+  .faq__photo        { max-width: 400px; margin: 0 auto; }
   .kontakt__inner    { grid-template-columns: 1fr; gap: 44px; }
+  .kontakt__photo    { max-width: 400px; margin: 0 auto; }
   .footer__top       { grid-template-columns: 1fr; gap: 32px; }
   .footer__cols      { flex-wrap: wrap; gap: 24px; }
 }
@@ -1457,10 +1460,7 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   .kform__row { grid-template-columns: 1fr; }
   .kform { padding: 22px; }
   .intro__pain-cards { grid-template-columns: 1fr; }
-  .intro__visual { max-width: 380px; margin: 0 auto; }
   .cs-teaser-grid { grid-template-columns: 1fr; }
-  .faq__photo     { max-width: 380px; margin: 0 auto; }
-  .kontakt__photo { max-width: 380px; margin: 0 auto; }
 }
 
 @media (max-width: 480px) {

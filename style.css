@@ -1457,8 +1457,11 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   .kform__row { grid-template-columns: 1fr; }
   .kform { padding: 22px; }
   .intro__pain-cards { grid-template-columns: 1fr; }
-  .intro__visual { max-width: 320px; margin: 0 auto; }
+  .intro__visual { max-width: 300px; margin: 0 auto; }
+  .intro__visual img { aspect-ratio: 4/5; }
   .cs-teaser-grid { grid-template-columns: 1fr; }
+  .faq__photo { display: none; }
+  .kontakt__photo { display: none; }
 }
 
 @media (max-width: 480px) {

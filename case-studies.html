@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <!-- ── KLARO COOKIE CONSENT ── -->
+  <script>
+  var klaroConfig = {
+    version: 1, elementID: 'klaro', lang: 'de', acceptAll: true,
+    hideDeclineAll: false, htmlTexts: true,
+    cookieName: 'klaro', cookieExpiresAfterDays: 365,
+    translations: {
+      de: {
+        privacyPolicyUrl: '/datenschutz.html',
+        consentNotice: {
+          description: 'Diese Website nutzt externe Dienste. Details in unserer <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a>.',
+          learnMore: 'Einstellungen', changeDescription: 'Es gab Änderungen – bitte aktualisiere deine Einstellungen.'
+        },
+        consentModal: {
+          title: 'Deine Cookie-Einstellungen',
+          description: 'Hier kannst du festlegen, welche Dienste aktiviert werden dürfen.',
+          privacyPolicy: { name: 'Datenschutzerklärung', text: 'Mehr dazu in unserer {privacyPolicy}.' }
+        },
+        acceptAll: 'Alle akzeptieren', acceptSelected: 'Auswahl speichern',
+        decline: 'Ablehnen', close: '✕', save: 'Speichern',
+        purposes: { functional: 'Funktional' },
+        service: { disableAll: { title: 'Alle Dienste', description: '' }, purpose: 'Zweck', purposes: 'Zwecke' },
+        poweredBy: ''
+      }
+    },
+    services: [
+      {
+        name: 'calendly', title: 'Calendly (Terminbuchung)', purposes: ['functional'], required: true,
+        translations: { de: { description: 'Ermöglicht die direkte Online-Terminbuchung.' } }
+      }
+    ]
+  };
+  </script>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/klaro@0.7/dist/klaro.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/klaro@0.7/dist/klaro.min.css" /></noscript>
+  <script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7/dist/klaro.js" data-config="klaroConfig"></script>
+  <title>Case Studies – Google Ads Ergebnisse | Klickrausch</title>
+  <meta name="description" content="Echte Google Ads Ergebnisse aus der Praxis: YouTube Live-Event, Hochzeitsfotografie und lokaler Dienstleister. Transparente Kennzahlen mit Screenshots." />
+  <link rel="canonical" href="https://drossbuetow-marketing.de/case-studies.html" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Page-specific styles ── */
+    .cs-hero {
+      background: var(--bg-2);
+      padding: 140px 0 72px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cs-hero .section-head { margin-bottom: 0; }
+
+    /* Case study cards */
+    .cs-item {
+      background: #fff;
+      border-radius: var(--r-xl);
+      border: 1.5px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .cs-item:last-child { margin-bottom: 0; }
+    .cs-item__head {
+      padding: 36px 40px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cs-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .cs-nr {
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--brown);
+      background: rgba(115,82,64,.08);
+      padding: 3px 10px; border-radius: var(--r-full);
+    }
+    .cs-branche {
+      font-size: .78rem; color: var(--text-3);
+      font-weight: 500; letter-spacing: .02em;
+    }
+    .cs-title {
+      font-family: var(--serif);
+      font-size: 1.75rem; font-weight: 600;
+      color: var(--text-1); line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .cs-lead {
+      font-size: 1rem; color: var(--text-2); line-height: 1.6;
+    }
+    .cs-lead strong { color: var(--brown); }
+
+    /* KPI row */
+    .cs-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+    }
+    .cs-kpi {
+      padding: 24px 32px;
+      border-right: 1px solid var(--border);
+    }
+    .cs-kpi:last-child { border-right: none; }
+    .cs-kpi strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.9rem; font-weight: 600;
+      color: var(--text-1); line-height: 1.1;
+    }
+    .cs-kpi span {
+      font-size: .78rem; color: var(--text-3);
+      margin-top: 4px; display: block;
+    }
+    .cs-kpi__note {
+      font-size: .65rem; color: var(--taupe);
+      text-transform: uppercase; letter-spacing: .07em;
+      margin-top: 6px; display: block;
+    }
+
+    /* Body */
+    .cs-item__body {
+      padding: 32px 40px 36px;
+    }
+    .cs-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+    .cs-col-label {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--brown); margin-bottom: 8px;
+    }
+    .cs-col p {
+      font-size: .88rem; color: var(--text-2); line-height: 1.65;
+    }
+    .cs-massnahmen {
+      list-style: none; margin-bottom: 28px;
+    }
+    .cs-massnahmen li {
+      font-size: .88rem; color: var(--text-2);
+      padding: 6px 0; padding-left: 18px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .cs-massnahmen li:last-child { border-bottom: none; }
+    .cs-massnahmen li::before {
+      content: '–';
+      position: absolute; left: 0;
+      color: var(--brown);
+    }
+    .cs-einordnung {
+      background: var(--bg-2);
+      border-radius: var(--r-md);
+      border-left: 3px solid var(--brown);
+      padding: 16px 20px;
+      margin-bottom: 28px;
+    }
+    .cs-einordnung strong {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--brown); display: block; margin-bottom: 6px;
+    }
+    .cs-einordnung p {
+      font-size: .85rem; color: var(--text-2); line-height: 1.6; margin: 0;
+    }
+    .cs-pdf-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg-2); border: 1.5px solid var(--border);
+      border-radius: var(--r-md); padding: 12px 20px;
+      font-size: .85rem; font-weight: 600; color: var(--text-1);
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .cs-pdf-btn:hover {
+      border-color: var(--brown); background: rgba(115,82,64,.04);
+    }
+    .cs-pdf-btn svg { flex-shrink: 0; }
+
+    /* CTA section */
+    .cs-cta-wrap {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      padding: 72px 0 80px;
+      text-align: center;
+    }
+    .cs-cta-wrap h2 {
+      font-family: var(--serif);
+      font-size: 2rem; font-weight: 600;
+      color: var(--text-1); margin-bottom: 16px;
+    }
+    .cs-cta-wrap p {
+      font-size: 1rem; color: var(--text-2);
+      max-width: 520px; margin: 0 auto 32px; line-height: 1.65;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .cs-hero { padding: 110px 0 56px; }
+      .cs-item__head { padding: 28px 24px 22px; }
+      .cs-item__body { padding: 24px 24px 28px; }
+      .cs-kpis { grid-template-columns: 1fr 1fr; }
+      .cs-kpi:nth-child(2) { border-right: none; }
+      .cs-kpi:nth-child(3) {
+        grid-column: 1 / -1;
+        border-right: none;
+        border-top: 1px solid var(--border);
+      }
+      .cs-cols { grid-template-columns: 1fr; gap: 20px; }
+      .cs-title { font-size: 1.4rem; }
+    }
+    @media (max-width: 480px) {
+      .cs-kpis { grid-template-columns: 1fr; }
+      .cs-kpi { border-right: none; border-top: 1px solid var(--border); }
+      .cs-kpi:first-child { border-top: none; }
+    }
+
+    /* ── Klaro: Markenfarben ── */
+    :root { --green1: #735240; --green2: #5c3f30; }
+    .klaro .cookie-modal .cm-btn.cm-btn-success,
+    .klaro .cookie-notice .cn-buttons button.cn-btn.cn-btn-accept-all { background: #735240 !important; }
+    .klaro .cookie-modal .cm-btn.cm-btn-success:hover,
+    .klaro .cookie-notice .cn-buttons button.cn-btn.cn-btn-accept-all:hover { background: #5c3f30 !important; }
+    .klaro .cookie-modal a, .klaro .cookie-notice a { color: #735240 !important; }
+    .klaro .cookie-modal .slider { background: #b7ae9e !important; }
+    .klaro .cookie-modal input:checked + .slider { background: #735240 !important; }
+    .klaro .cookie-notice { font-family: 'Inter', system-ui, sans-serif; }
+    .klaro .cookie-modal .cm-header { border-bottom: 1px solid #e8e4e3; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ LOADER ═══════════ -->
+  <div class="loader" id="loader">
+    <div class="loader__mark">Klickrausch</div>
+    <div class="loader__bar"><div class="loader__fill"></div></div>
+  </div>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__wrap">
+      <a href="index.html" class="nav__logo">Klick<em>rausch</em></a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <a href="index.html#nadine">Über mich</a>
+        <a href="index.html#angebot">Angebot &amp; Preise</a>
+        <a href="case-studies.html" aria-current="page">Case Studies</a>
+        <a href="ki-workshops.html">KI Workshops</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <a href="index.html#kontakt" class="nav__btn">Kostenloses Erstgespräch</a>
+      <button class="nav__burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileNav">
+      <a href="index.html#nadine"   class="mlink">Über mich</a>
+      <a href="index.html#angebot"  class="mlink">Angebot &amp; Preise</a>
+      <a href="case-studies.html"   class="mlink">Case Studies</a>
+      <a href="ki-workshops.html"   class="mlink">KI Workshops</a>
+      <a href="index.html#faq"      class="mlink">FAQ</a>
+      <a href="index.html#kontakt"  class="mlink">Kontakt</a>
+      <a href="index.html#kontakt"  class="mlink mlink--cta">Kostenloses Erstgespräch buchen</a>
+    </div>
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="cs-hero">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div class="tag">Ergebnisse aus der Praxis</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);font-weight:600;color:var(--text-1);line-height:1.15;margin-bottom:16px">
+          Echte Zahlen.<br><em>Kein Hochglanz.</em>
+        </h1>
+        <p style="font-size:1.05rem;color:var(--text-2);max-width:560px;line-height:1.65;margin:0 auto">
+          Hier siehst du, wie Google Ads in echten Kampagnen gewirkt hat – mit Screenshots direkt aus dem Konto, transparenter Methodik und ehrlicher Einordnung der Ergebnisse.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CASE STUDIES ═══════════ -->
+  <section class="section" style="background:var(--bg)">
+    <div class="container">
+
+      <!-- ── Case Study 01: YouTube Ads ── -->
+      <div class="cs-item" data-reveal>
+        <div class="cs-item__head">
+          <div class="cs-meta">
+            <span class="cs-nr">Case Study 01</span>
+            <span class="cs-branche">YouTube Ads · Live-Event · Düsseldorf</span>
+          </div>
+          <h2 class="cs-title">YouTube Ads für ein Live-Event</h2>
+          <p class="cs-lead">Mit <strong>175,93 &euro; Werbebudget</strong> in drei Wochen: 21.731 Videoaufrufe, 119 Klicks und <strong>16 verkaufte Tickets</strong> über eine Landingpage, die ausschließlich über die Anzeigen erreichbar war.</p>
+        </div>
+        <div class="cs-kpis">
+          <div class="cs-kpi">
+            <strong>16</strong>
+            <span>verkaufte Tickets</span>
+            <em class="cs-kpi__note">Separat erfasst</em>
+          </div>
+          <div class="cs-kpi">
+            <strong>11,00 &euro;</strong>
+            <span>Werbekosten pro Ticket</span>
+            <em class="cs-kpi__note">Berechnet</em>
+          </div>
+          <div class="cs-kpi">
+            <strong>59 %</strong>
+            <span>TrueView-Aufrufrate</span>
+            <em class="cs-kpi__note">Google Ads Konto</em>
+          </div>
+        </div>
+        <div class="cs-item__body">
+          <div class="cs-cols">
+            <div class="cs-col">
+              <p class="cs-col-label">Ausgangssituation &amp; Ziel</p>
+              <p>Für ein Live-Event in Düsseldorf sollten Tickets verkauft werden. Ziel der dreiwöchigen Kampagne: die lokale Zielgruppe erreichen und Interessentinnen direkt zum Ticketkauf führen.</p>
+            </div>
+            <div class="cs-col">
+              <p class="cs-col-label">Zielgruppe &amp; Strategie</p>
+              <p>Frauen zwischen 25 und 55 Jahren im Umkreis von 20 km um Düsseldorf. Statt eines klassischen Werbespots kamen echte Stimmen von Besucherinnen der vorherigen Veranstaltung zum Einsatz.</p>
+            </div>
+          </div>
+          <p class="cs-col-label">Maßnahmen</p>
+          <ul class="cs-massnahmen">
+            <li>Responsive Videoanzeige mit Interview-Material aus der Vorveranstaltung</li>
+            <li>Ausspielung in In-Stream und Shorts</li>
+            <li>Geografisches und demografisches Targeting auf das Einzugsgebiet</li>
+            <li>Eigene Landingpage mit Ticketverkauf, nur über die Anzeigen erreichbar</li>
+          </ul>
+          <div class="cs-einordnung">
+            <strong>Einordnung</strong>
+            <p>Die Landingpage war ausschließlich über die Anzeigen erreichbar – so lassen sich alle 16 Ticketverkäufe eindeutig der Kampagne zuordnen, obwohl das Tracking außerhalb von Google Ads erfolgte. Bei länger laufenden Kampagnen richte ich das Conversion-Tracking direkt zum Start ein.</p>
+          </div>
+          <a href="downloads/Arbeitsprobe_Google_Ads_YouTube_Live-Event.pdf" class="cs-pdf-btn" download>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Vollständige Case Study herunterladen (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Case Study 02: Lokaler Dienstleister ── -->
+      <div class="cs-item" data-reveal data-delay="80">
+        <div class="cs-item__head">
+          <div class="cs-meta">
+            <span class="cs-nr">Case Study 02</span>
+            <span class="cs-branche">Google Search Ads · Lokaler Dienstleister</span>
+          </div>
+          <h2 class="cs-title">Neustart mit messbaren Terminbuchungen</h2>
+          <p class="cs-lead">Unter der vorherigen Betreuung wurde <strong>keine einzige Conversion erfasst</strong>. In der ersten Woche nach dem Neustart: <strong>6 Terminbuchungen</strong> bei 108,08 &euro; Werbebudget.</p>
+        </div>
+        <div class="cs-kpis">
+          <div class="cs-kpi">
+            <strong>6</strong>
+            <span>Terminbuchungen in Woche 1</span>
+            <em class="cs-kpi__note">Google Ads Konto</em>
+          </div>
+          <div class="cs-kpi">
+            <strong>18,01 &euro;</strong>
+            <span>Werbekosten pro Buchung</span>
+            <em class="cs-kpi__note">Berechnet</em>
+          </div>
+          <div class="cs-kpi">
+            <strong>8,27 %</strong>
+            <span>Klickrate (CTR)</span>
+            <em class="cs-kpi__note">Google Ads Konto</em>
+          </div>
+        </div>
+        <div class="cs-item__body">
+          <div class="cs-cols">
+            <div class="cs-col">
+              <p class="cs-col-label">Ausgangssituation &amp; Ziel</p>
+              <p>Die Kampagne eines lokalen Dienstleisters wurde zuvor anderweitig betreut, ohne dass eine einzige Conversion erfasst wurde. Ziel des Neustarts: Werbebudget messbar in gebuchte Termine umzusetzen.</p>
+            </div>
+            <div class="cs-col">
+              <p class="cs-col-label">Strategie</p>
+              <p>Konsequente Ausrichtung auf das eigentliche Geschäftsziel. Eine Conversion wird erst gezählt, wenn tatsächlich ein Termin gebucht wird. Seitenaufrufe oder Klicks gelten nicht als Erfolg.</p>
+            </div>
+          </div>
+          <p class="cs-col-label">Maßnahmen</p>
+          <ul class="cs-massnahmen">
+            <li>Neustart der Kampagne nach erfolgloser Vorbetreuung</li>
+            <li>Conversion-Messung auf die abgeschlossene Terminbuchung ausgerichtet</li>
+            <li>Ausrichtung auf Interessentinnen und Interessenten im lokalen Einzugsgebiet</li>
+          </ul>
+          <div class="cs-einordnung">
+            <strong>Einordnung</strong>
+            <p>Die Zahlen stammen aus der ersten Woche nach dem Start. Für belastbare Aussagen zu Kosten pro Buchung braucht es einen längeren Zeitraum. Die kommenden Wochen zeigen, wie stabil die Werte bleiben – das ist die Grundlage für jede weitere Optimierung.</p>
+          </div>
+          <a href="downloads/Arbeitsprobe_Google_Ads_Terminbuchungen_Lokaler_Dienstleister.pdf" class="cs-pdf-btn" download>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Vollständige Case Study herunterladen (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Case Study 03: Hochzeitsfotografie ── -->
+      <div class="cs-item" data-reveal data-delay="160">
+        <div class="cs-item__head">
+          <div class="cs-meta">
+            <span class="cs-nr">Case Study 03</span>
+            <span class="cs-branche">Google Search Ads · Hochzeitsfotografie</span>
+          </div>
+          <h2 class="cs-title">Anfragen, die zu Buchungen werden</h2>
+          <p class="cs-lead">In gut zwei Monaten: <strong>14 Anfragen</strong> über eine Kampagnen-Landingpage – davon wurden <strong>12 zu festen Buchungen</strong>. Bei Aufträgen im vierstelligen Bereich.</p>
+        </div>
+        <div class="cs-kpis">
+          <div class="cs-kpi">
+            <strong>86 %</strong>
+            <span>Anfragen wurden Buchungen</span>
+            <em class="cs-kpi__note">Berechnet: 12 von 14</em>
+          </div>
+          <div class="cs-kpi">
+            <strong>1,82 &euro;</strong>
+            <span>Ø Kosten pro Klick</span>
+            <em class="cs-kpi__note">Google Ads Konto</em>
+          </div>
+          <div class="cs-kpi">
+            <strong>7,07 %</strong>
+            <span>Klickrate (CTR)</span>
+            <em class="cs-kpi__note">Berechnet</em>
+          </div>
+        </div>
+        <div class="cs-item__body">
+          <div class="cs-cols">
+            <div class="cs-col">
+              <p class="cs-col-label">Ausgangssituation &amp; Ziel</p>
+              <p>Eine Hochzeitsfotografin mit Aufträgen im vierstelligen Bereich wollte über Google Ads neue Anfragen gewinnen. Bei diesem Preisniveau zählt jede einzelne Anfrage – Qualität ist wichtiger als Menge.</p>
+            </div>
+            <div class="cs-col">
+              <p class="cs-col-label">Strategie</p>
+              <p>Eigene Landingpage, die nicht über die Website erreichbar ist – so lässt sich jede Anfrage eindeutig der Kampagne zuordnen. Zusätzlich misst Google Ads das abgeschickte Kontaktformular als Conversion.</p>
+            </div>
+          </div>
+          <p class="cs-col-label">Maßnahmen</p>
+          <ul class="cs-massnahmen">
+            <li>Eigene Landingpage, ausschließlich über die Google Ads Anzeigen erreichbar</li>
+            <li>Conversion-Tracking auf das abgeschickte Kontaktformular</li>
+            <li>Abgleich der Anfragen und Buchungen in Rücksprache mit der Kundin</li>
+          </ul>
+          <div class="cs-einordnung">
+            <strong>Einordnung der Tracking-Differenz</strong>
+            <p>Google Ads hat 9 der 14 Anfragen als Conversion erfasst. Erst der Abgleich über die separate Landingpage zeigt den vollständigen Erfolg. Mögliche Gründe für die Differenz: fehlende Cookie-Zustimmung oder Anfragen bei einem späteren Besuch über ein anderes Gerät.</p>
+          </div>
+          <a href="downloads/Arbeitsprobe_Google_Ads_Hochzeitsfotografie.pdf" class="cs-pdf-btn" download>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Vollständige Case Study herunterladen (PDF)
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="cs-cta-wrap" data-reveal>
+    <div class="container">
+      <h2>Sollen wir das auch<br><em>für dein Business</em> umsetzen?</h2>
+      <p>Im kostenlosen 30-Minuten-Gespräch schauen wir gemeinsam, welche Kampagnenstrategie zu deinem Ziel passt. Kein Verkaufsgespräch. Kein Druck.</p>
+      <a href="index.html#kontakt" class="btn btn--primary">Kostenloses Erstgespräch buchen &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">Klick<em>rausch</em></div>
+          <p>Google Ads &amp; Performance Marketing für selbständige Frauen deutschlandweit.</p>
+          <a href="https://instagram.com/klickrausch" target="_blank" class="footer__ig" aria-label="Instagram">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <strong>Angebot</strong>
+            <ul>
+              <li><a href="index.html#angebot">Google Suchkampagnen</a></li>
+              <li><a href="index.html#angebot">YouTube Ads</a></li>
+              <li><a href="index.html#angebot">Landing Pages</a></li>
+              <li><a href="ki-workshops.html">KI Workshops</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <strong>Navigation</strong>
+            <ul>
+              <li><a href="index.html#nadine">Über mich</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+              <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <strong>Rechtliches</strong>
+            <ul>
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutz.html">Datenschutz</a></li>
+              <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Cookie-Einstellungen</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Klickrausch &middot; Nadine Dross-Buetow. Alle Rechte vorbehalten.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

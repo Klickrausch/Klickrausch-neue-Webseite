@@ -1457,11 +1457,10 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   .kform__row { grid-template-columns: 1fr; }
   .kform { padding: 22px; }
   .intro__pain-cards { grid-template-columns: 1fr; }
-  .intro__visual { max-width: 300px; margin: 0 auto; }
-  .intro__visual img { aspect-ratio: 4/5; }
+  .intro__visual { max-width: 380px; margin: 0 auto; }
   .cs-teaser-grid { grid-template-columns: 1fr; }
-  .faq__photo { display: none; }
-  .kontakt__photo { display: none; }
+  .faq__photo     { max-width: 380px; margin: 0 auto; }
+  .kontakt__photo { max-width: 380px; margin: 0 auto; }
 }
 
 @media (max-width: 480px) {

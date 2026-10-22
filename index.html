@@ -145,6 +145,13 @@
       margin: 0 auto;
       display: block;
     }
+    /* Leistungs-Abschnittslabel in Preiskarten */
+    .leistungen-label {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      color: var(--text-3); margin-top: 14px; margin-bottom: 2px;
+    }
+    .leistungen-label:first-child { margin-top: 0; }
     /* ── Klaro: Markenfarben ── */
     :root { --green1: #735240; --green2: #5c3f30; }
     .klaro .cookie-modal .cm-btn.cm-btn-success,
@@ -433,27 +440,7 @@
 
         <div class="pakete-grid">
 
-          <!-- Paket 1: Strategie & Sichtbarkeit -->
-          <div class="paket-card" data-reveal data-delay="0">
-            <div>
-              <p class="paket-name">Strategie &amp; Sichtbarkeit</p>
-              <p class="paket-tagline">Der strategische Einstieg, bevor du Geld in Ads investierst</p>
-            </div>
-            <p class="paket-fuer">Für alle, die wissen wollen, ob und wie Google wirklich für ihr Business funktioniert</p>
-            <div class="paket-preis">
-              <p class="preis-haupt">690 €<span class="preis-einheit">einmalig</span></p>
-            </div>
-            <ul class="paket-leistungen">
-              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Unternehmensprofil SEO-optimiert</li>
-              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Analyse deines bestehenden Funnels / Angebots</li>
-              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Individuelle Marketingstrategie für dein Angebot</li>
-              <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Konkrete Handlungsempfehlungen schriftlich</li>
-              <li class="nein"><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#f5ede8"/><path d="M6 9h6" stroke="#c4a882" stroke-width="1.5" stroke-linecap="round"/></svg>Keine laufende Ads-Betreuung</li>
-            </ul>
-            <a href="#kontakt" class="paket-cta paket-cta--secondary">Erstgespräch buchen &rarr;</a>
-          </div>
-
-          <!-- Paket 2: Kampagnensetup & Schulung -->
+          <!-- Paket 1: Kampagnensetup & Schulung -->
           <div class="paket-card" data-reveal data-delay="100">
             <div>
               <p class="paket-name">Kampagnensetup &amp; Schulung</p>
@@ -497,6 +484,40 @@
             <a href="#kontakt" class="paket-cta paket-cta--primary">Jetzt Erstgespräch buchen &rarr;</a>
           </div>
 
+          <!-- Paket 3: YouTube Ads -->
+          <div class="paket-card" data-reveal data-delay="200">
+            <div>
+              <p class="paket-name">YouTube Ads</p>
+              <p class="paket-tagline">Mehr Sichtbarkeit für dein Business mit YouTube-Werbung</p>
+            </div>
+            <p class="paket-fuer">Ideal für lokale Unternehmen, Dienstleister, Events und Marken, die ihre Bekanntheit steigern möchten</p>
+            <div class="paket-preis">
+              <p class="preis-haupt">ab 690 €<span class="preis-einheit">Setup einmalig</span></p>
+              <p class="preis-monat">ab 290 € <span style="font-size:.8rem; font-weight:400; color:var(--text-3);">/ Monat Betreuung</span></p>
+              <p class="preis-hinweis">Mindestlaufzeit 3 Monate Betreuung</p>
+            </div>
+            <div>
+              <p class="leistungen-label">Einmaliges Setup enthält:</p>
+              <ul class="paket-leistungen">
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Individuelle Kampagnenstrategie</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Zielgruppen- und Standortausrichtung</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Einrichtung einer YouTube-Videokampagne</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Anzeigen- und Budgeteinstellungen</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Einrichtung des vereinbarten Conversion-Trackings</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Kampagnenstart und Funktionsprüfung</li>
+              </ul>
+              <p class="leistungen-label">Monatliche Betreuung enthält:</p>
+              <ul class="paket-leistungen">
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Regelmäßige Kampagnenüberwachung</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Optimierung der Zielgruppen und Platzierungen</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Budget- und Performanceoptimierung</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Monatliches Reporting</li>
+                <li><svg class="check-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="#eaf3de"/><path d="M5 9l3 3 5-5" stroke="#3b6d11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Persönlicher Austausch zu den Ergebnissen</li>
+              </ul>
+            </div>
+            <a href="#kontakt" class="paket-cta paket-cta--secondary">Erstgespräch buchen &rarr;</a>
+          </div>
+
         </div>
 
         <!-- Add-ons -->
@@ -517,6 +538,11 @@
             <div class="addon-card">
               <p class="addon-name">Kampagnen-Check-Up</p>
               <p class="addon-desc">Du hast bereits Ads laufen, bist aber unzufrieden? Ich decke Potenziale auf.</p>
+              <p class="addon-preis">auf Anfrage</p>
+            </div>
+            <div class="addon-card">
+              <p class="addon-name">ChatGPT Ads</p>
+              <p class="addon-desc">Werbeanzeigen über ChatGPT Search – das neue Format für mehr Sichtbarkeit im KI-Zeitalter.</p>
               <p class="addon-preis">auf Anfrage</p>
             </div>
           </div>

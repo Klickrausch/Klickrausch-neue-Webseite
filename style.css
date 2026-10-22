@@ -1254,7 +1254,7 @@ h2 em { font-style: italic; color: var(--brown-lt); }
 }
 .pakete-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-bottom: 28px;
   align-items: start;

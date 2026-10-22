@@ -512,7 +512,7 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   display: flex; flex-direction: column; gap: 20px;
 }
 .intro__visual img {
-  width: 100%; aspect-ratio: 3/4;
+  width: 100%; height: auto; aspect-ratio: 3/4;
   object-fit: cover; object-position: center 15%;
   border-radius: var(--r-xl);
   border: 1px solid var(--border-2);
@@ -958,7 +958,7 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   box-shadow: 0 10px 32px rgba(115,82,64,.09);
 }
 .faq__photo img {
-  width: 100%; aspect-ratio: 3/4;
+  width: 100%; height: auto; aspect-ratio: 3/4;
   object-fit: cover; object-position: center top;
   display: block;
 }
@@ -1040,7 +1040,7 @@ h2 em { font-style: italic; color: var(--brown-lt); }
   box-shadow: 0 10px 32px rgba(115,82,64,.09);
 }
 .kontakt__photo img {
-  width: 100%; aspect-ratio: 3/4;
+  width: 100%; height: auto; aspect-ratio: 3/4;
   object-fit: cover; object-position: center top;
   display: block;
 }
